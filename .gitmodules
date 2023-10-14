@@ -1,0 +1,3 @@
+[submodule "devenv/github/p4lang/p4c/fork"]
+	path = devenv/github/p4lang/p4c/fork
+	url = git@github.com:qobilidop/fork-p4lang-p4c.git
