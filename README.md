@@ -1,3 +1,3 @@
-# Workspace
+# Studio
 
-Workspace for all my personal projects that don't need a separate repo.
+My default workspace for anything not requiring a separate repo.
