@@ -33,4 +33,4 @@ RUN groupadd --gid $USER_GID $USERNAME \
 USER $USERNAME
 
 # Switch to use Bash as default shell
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/usr/bin/bash"]

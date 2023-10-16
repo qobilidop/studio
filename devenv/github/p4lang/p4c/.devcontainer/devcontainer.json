@@ -9,9 +9,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"daohong-emilio.yash",
 				"ms-azuretools.vscode-docker",
 				"ms-python.python",
-                "ms-vscode.cmake-tools",
+				"ms-vscode.cmake-tools",
 				"ms-vscode.cpptools"
 			]
 		}
