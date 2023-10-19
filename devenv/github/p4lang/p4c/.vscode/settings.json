@@ -1,3 +1,13 @@
 {
+    "cmake.buildDirectory": "${workspaceFolder}/fork/build",
+    "cmake.configureSettings": {
+        "CMAKE_UNITY_BUILD": "ON",
+        "ENABLE_BMV2": "ON",
+        "ENABLE_DPDK": "OFF",
+        "ENABLE_SANITIZERS": "OFF",
+        "ENABLE_TEST_TOOLS": "ON",
+        "ENABLE_WERROR": "ON"
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/fork",
     "terminal.integrated.defaultProfile.linux": "bash"
 }
