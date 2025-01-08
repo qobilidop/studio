@@ -1,0 +1,6 @@
+[submodule "2025/project/p4mlir/repo/p4c"]
+	path = 2025/project/p4mlir/repo/p4c
+	url = git@github.com:qobilidop/fork__p4lang__p4c.git
+[submodule "2025/project/p4mlir/repo/p4mlir"]
+	path = 2025/project/p4mlir/repo/p4mlir
+	url = git@github.com:p4lang/p4mlir.git
