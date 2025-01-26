@@ -1,0 +1,38 @@
+{
+  "name": "2025/develop/p4c",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "privileged": true,
+  "remoteUser": "p4lang",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/p4lang/${localWorkspaceFolderBasename},type=bind",
+  "workspaceFolder": "/home/p4lang/${localWorkspaceFolderBasename}",
+  // https://containers.dev/features
+  "features": {
+    // https://github.com/devcontainers/features/tree/main/src/common-utils
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "username": "p4lang",
+      "userUid": "1000",
+      "userGid": "1000"
+    }
+  },
+  "customizations": {
+    // https://containers.dev/supporting#visual-studio-code
+    "vscode": {
+      "extensions": [
+        "llvm-vs-code-extensions.vscode-clangd",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-vscode.cmake-tools",
+        "ms-vscode.cpptools",
+        "twxs.cmake"
+      ]
+    }
+  }
+}
