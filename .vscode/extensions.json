@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "foam.foam-vscode",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers"
+  ]
+}
