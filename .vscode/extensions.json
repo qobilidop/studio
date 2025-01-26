@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "catppuccin.catppuccin-vsc",
     "esbenp.prettier-vscode",
     "foam.foam-vscode",
     "ms-azuretools.vscode-docker",
