@@ -2,7 +2,7 @@
 
 Five sessions:
 
-- **session-00**: Day log from morning to evening. Factory reset MacOS and rebuilt a minimal dev environment: Homebrew, VS Code, 1Password, Chrome, Colima (chosen over Docker Desktop for minimalism). Set up SSH key with Ed25519 signing (no GPG). Went for a pre-lunch run while listening to Lex Fridman #491 (OpenClaw). Refined the Cyborg repo architecture into four tiers: `memory/`, `knowledge/`, `ability/`, `activity/`. Installed coding agents (Claude Code, Codex, Gemini CLI) and began working with them in the repo.
+- **session-00**: Day log from morning to evening. Factory reset MacOS and rebuilt a minimal dev environment: Homebrew, VS Code, 1Password, Chrome, Colima (chosen over Docker Desktop for minimalism). Set up SSH key with Ed25519 signing (no GPG). Went for a pre-lunch run while listening to Lex Fridman #491 (OpenClaw). Refined the Cyborg repo architecture into four tiers: `memory/`, `knowledge/`, `ability/`, `activity/`. Installed coding agents (Claude Code, Codex, Gemini CLI) and began working with them in the repo. Later: noticed Z3 repo has agentic workflows, discussed cross-session context sync between Gemini web UI and CLI agents (proposed a `web-sync.md` briefing pattern), and settled on squash merging as the PR merge policy for clean commit history.
 
 - **session-01**: Designed the **Z3Wire** project — a header-only C++20 type-safe abstraction layer over Z3's bit-vector and boolean types. Key design decisions:
   - **Name/namespace**: Z3Wire / `z3w::`
