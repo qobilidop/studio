@@ -43,8 +43,7 @@ Current state: only `memory/` is populated.
 ## Memory Conventions
 
 - Keep raw records in date-based folders: `memory/{year}/{quarter}/{week}/{MM-DD-dow}/`.
-- Chat files use `chat-YYYY-MM-DD-{index}.{md,json}` (zero-based index).
-- Preserve both human-readable markdown and machine-readable JSON when available.
+- Session files use `session-{index}.md` (zero-based index).
 - In `memory/`, `README.md` files are summaries; non-README files are raw recordings and should not be modified unless explicitly asked.
 
 ## Agent Working Style
