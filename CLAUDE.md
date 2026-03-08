@@ -10,12 +10,12 @@ Bili the Cyborg is a community of Bili the human and Bili's agent buddies — an
 
 Our shared knowledge repository and workspace. The planned structure has four tiers:
 
-- `memory/` — Raw memories: chat transcripts, notes, and time-scale summaries
-- `knowledge/` — Distilled insights extracted from memory and other activities
-- `ability/` — Reusable skills expressed in some form
-- `activity/` — Actual project work using our skills
+- `memory/` — Raw recordings: chat transcripts, notes, and time-scale summaries
+- `knowledge/` — Cross-cutting insights distilled from memory and other activities
+- `skills/` — Reusable capabilities (scripts, prompts, tool configs)
+- `projects/` — Active project work
 
-Currently only `memory/` is populated.
+Currently only `memory/` is populated. Other directories will be created when real content demands them.
 
 ## Development Environment
 
