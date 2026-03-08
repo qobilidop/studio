@@ -9,5 +9,5 @@ Session transcripts and notes organized by date: `{year}/{quarter}/{week}/{MM-DD
 
 ## Conventions
 
-- Session files are named `session-{index}.md` where index is zero-based.
+- Session files are named `session-{NN}.md` where NN is a zero-padded two-digit index.
 - `.md` transcripts use `# you asked` and `# {model} response` as section headers, separated by `---`.
