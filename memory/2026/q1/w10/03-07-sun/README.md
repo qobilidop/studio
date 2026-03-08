@@ -1,6 +1,6 @@
 # 2026-03-07 (Sunday)
 
-Three sessions:
+Five sessions:
 
 - **session-00**: Day log from morning to evening. Factory reset MacOS and rebuilt a minimal dev environment: Homebrew, VS Code, 1Password, Chrome, Colima (chosen over Docker Desktop for minimalism). Set up SSH key with Ed25519 signing (no GPG). Went for a pre-lunch run while listening to Lex Fridman #491 (OpenClaw). Refined the Cyborg repo architecture into four tiers: `memory/`, `knowledge/`, `ability/`, `activity/`. Installed coding agents (Claude Code, Codex, Gemini CLI) and began working with them in the repo.
 
@@ -18,3 +18,7 @@ Three sessions:
   - Plan to vibe-code the prototype, then harden with tests and CI in the same repo
 
 - **session-02**: First Claude Code working session — bootstrapped the cyborg repo. Set up identity (README, CLAUDE.md), memory conventions (hierarchical README summaries), devcontainer + CI, gitleaks pre-commit hook and CI workflow. Discussed repo structure (renamed ability→skills, activity→projects), decided Z3Wire will be a fully separate repo.
+
+- **session-03**: Built Z3Wire from scaffolding to complete MVP — Bool wrapper, BitVec<W,S> with full bitwise/arithmetic/shift/cast/extract/concat ops, three runnable examples, clang-format + lint tooling, dev.sh Docker wrapper, Google-style flat layout, and comprehensive AGENTS.md.
+
+- **session-04**: Housekeeping — cleaned up memory naming conventions (`chat-` → `session-`, dropped date from filenames, removed JSON exports, consolidated CLAUDE.md → AGENTS.md, 2-digit session index). Also debugged a stuck Explore subagent and discussed CLAUDE.md best practices.

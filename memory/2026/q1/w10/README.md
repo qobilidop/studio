@@ -13,9 +13,10 @@ The week Bili the Cyborg was born.
 - Set up devcontainer and CI for the repo
 - Set up gitleaks pre-commit hook and CI workflow for secret scanning
 - Defined identity: "Bili the Cyborg" — a community of human and agent buddies, singular to the outside world
-- Designed the Z3Wire project — a type-safe C++20 wrapper for Z3 bit-vectors with precision-preserving arithmetic
+- Designed and built the Z3Wire MVP — a type-safe C++20 wrapper for Z3 bit-vectors with precision-preserving arithmetic
+- Cleaned up memory conventions: `chat-` → `session-`, consolidated CLAUDE.md → AGENTS.md
 
 ## Days
 
 - [03-06-sat](03-06-sat/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
-- [03-07-sun](03-07-sun/README.md): Environment setup, repo initialization, first work with agent buddies, Z3Wire design session
+- [03-07-sun](03-07-sun/README.md): Environment setup, repo initialization, Z3Wire design + full MVP implementation, memory conventions cleanup
