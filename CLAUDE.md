@@ -26,14 +26,5 @@ Currently only `memory/` is populated.
 
 ## Repository Structure
 
-- `memory/` — Chat transcripts and notes, organized by date: `memory/{year}/{quarter}/{week}/{MM-DD-dow}/`
-  - `.md` files contain human-readable chat transcripts (alternating "you asked" / "{model} response" sections separated by `---`)
-  - `.json` files contain raw chat export data
-  - `README.md` at each level summarizes the memories beneath it
+- `memory/` — Raw memories (see `memory/CLAUDE.md` for conventions)
 - `.devcontainer/` — Devcontainer configuration
-
-## Conventions
-
-- Date-based directory hierarchy: `YYYY/qN/wNN/MM-DD-dow/`
-- Chat files are named `chat-YYYY-MM-DD-{index}.{md,json}` where index is zero-based
-- Markdown chat transcripts use `# you asked` and `# {model} response` as section headers
