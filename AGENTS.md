@@ -16,6 +16,9 @@ Our shared knowledge repository and workspace.
 - `README.md` — Our identity and current status
 - `memory/` — Session transcripts, summaries, and time-scale summaries
 - `knowledge/` — Cross-cutting insights distilled from memory and other activities
+- `.claude/skills/` — Claude Code skills (slash commands)
+  - Skills with a `.global` marker file are deployed to `~/.claude/skills/` via `tools/deploy-skills.sh` for cross-repo availability
+- `tools/` — Utility scripts
 
 New directories are created when real content demands them, not before.
 

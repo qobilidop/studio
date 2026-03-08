@@ -5,12 +5,12 @@ disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
-Record a summary of the current Claude Code session to our memory.
+Record a summary of the current Claude Code session to our collective memory at `~/i/cyborg/memory/`.
 
 ## Steps
 
 1. **Derive the session file path** from today's date:
-   - Format: `memory/{year}/q{quarter}/w{week}/{MM-DD-dow}/session-{NN}.md`
+   - Format: `~/i/cyborg/memory/{year}/q{quarter}/w{week}/{MM-DD-dow}/session-{NN}.md`
    - Week number uses ISO 8601 (Monday-start weeks)
    - Day-of-week is lowercase 3-letter abbreviation (mon, tue, wed, thu, fri, sat, sun)
    - `NN` is the next available zero-padded two-digit index in that day's directory
@@ -33,6 +33,6 @@ Record a summary of the current Claude Code session to our memory.
 
 ## Rules
 
-- Follow the conventions in `memory/AGENTS.md`.
+- Follow the conventions in `~/i/cyborg/memory/AGENTS.md`.
 - Do NOT modify existing session files.
 - Do NOT ask the user for the session content — summarize from the current conversation context.
