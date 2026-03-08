@@ -8,9 +8,10 @@ The week Bili the Cyborg was born.
 - Factory reset MacOS; rebuilt a minimal dev environment (Homebrew, VS Code, Colima, 1Password)
 - Set up SSH-based commit signing (Ed25519)
 - Installed coding agents: Claude Code, Codex, Gemini CLI
-- Defined Cyborg repo vision: four-tier structure (`memory/`, `knowledge/`, `ability/`, `activity/`)
+- Defined Cyborg repo vision: four-tier structure (`memory/`, `knowledge/`, `skills/`, `projects/`)
 - Chose time-based directory hierarchy: `year/qN/wNN/MM-DD-dow/`
 - Set up devcontainer and CI for the repo
+- Set up gitleaks pre-commit hook and CI workflow for secret scanning
 - Defined identity: "Bili the Cyborg" — a community of human and agent buddies, singular to the outside world
 - Designed the Z3Wire project — a type-safe C++20 wrapper for Z3 bit-vectors with precision-preserving arithmetic
 
