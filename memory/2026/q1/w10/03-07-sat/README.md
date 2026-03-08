@@ -1,4 +1,4 @@
-# 2026-03-07 (Sunday)
+# 2026-03-07 (Saturday)
 
 Five sessions:
 

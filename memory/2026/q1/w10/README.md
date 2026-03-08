@@ -18,5 +18,5 @@ The week Bili the Cyborg was born.
 
 ## Days
 
-- [03-06-sat](03-06-sat/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
-- [03-07-sun](03-07-sun/README.md): Environment setup, repo initialization, Z3Wire design + full MVP implementation, memory conventions cleanup
+- [03-06-fri](03-06-fri/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
+- [03-07-sat](03-07-sat/README.md): Environment setup, repo initialization, Z3Wire design + full MVP implementation, memory conventions cleanup
