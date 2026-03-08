@@ -18,11 +18,11 @@ As an agent buddy, you are part of this collective.
 
 This repository is the shared workspace for human-agent collaboration.
 
-Planned knowledge stack:
+Planned top-level structure:
 - `memory/` for raw memories (chat transcripts, notes, time-based logs)
 - `knowledge/` for distilled insights
-- `ability/` for reusable skills
-- `activity/` for concrete project work
+- `skills/` for reusable capabilities (scripts, prompts, tool configs)
+- `projects/` for active project work
 
 Current state: only `memory/` is populated.
 
@@ -32,13 +32,20 @@ Current state: only `memory/` is populated.
 - Prefer containerized, per-project environments.
 - Use devcontainers for project isolation.
 - Colima is the container runtime in this setup.
+- Git signing preference is SSH-based (Ed25519), with no required GPG setup.
+
+## Current Automation
+
+- Devcontainer CI runs on pushes and PRs to `main` via `.github/workflows/devcontainer.yml`.
+- Gitleaks scanning runs on pushes and PRs to `main` via `.github/workflows/gitleaks.yml`.
+- Devcontainer definition currently lives in `.devcontainer/devcontainer.json`.
 
 ## Memory Conventions
 
 - Keep raw records in date-based folders: `memory/{year}/{quarter}/{week}/{MM-DD-dow}/`.
 - Chat files use `chat-YYYY-MM-DD-{index}.{md,json}` (zero-based index).
 - Preserve both human-readable markdown and machine-readable JSON when available.
-- Do not rewrite historical transcripts unless explicitly asked.
+- In `memory/`, `README.md` files are summaries; non-README files are raw recordings and should not be modified unless explicitly asked.
 
 ## Agent Working Style
 
@@ -46,7 +53,8 @@ Current state: only `memory/` is populated.
 - Be concise, factual, and execution-oriented.
 - Make reversible, minimal changes by default.
 - Respect existing structure and naming conventions.
-- When uncertain, prefer preserving raw context and adding new derived artifacts separately.
+- When uncertain, preserve raw context and add derived artifacts separately.
+- Prefer updating summaries/docs over rewriting historical raw logs.
 
 ## Scope Notes
 
