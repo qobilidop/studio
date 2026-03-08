@@ -8,7 +8,21 @@ Bili the Cyborg is a community of Bili the human and Bili's agent buddies — an
 
 ## What This Repo Is
 
-Our shared knowledge repository — a journal for recording AI chat transcripts, thoughts, and explorations around agentic AI and related topics. There is no application code, build system, or test suite.
+Our shared knowledge repository and workspace. The planned structure has four tiers:
+
+- `memory/` — Raw memories: chat transcripts, notes, and time-scale summaries
+- `knowledge/` — Distilled insights extracted from memory and other activities
+- `ability/` — Reusable skills expressed in some form
+- `activity/` — Actual project work using our skills
+
+Currently only `memory/` is populated.
+
+## Development Environment
+
+- **Host philosophy:** Minimal — Homebrew, VS Code, 1Password, Chrome, and coding agents (Claude Code, Codex, Gemini CLI) on the host. Everything else in containers.
+- **Container runtime:** Colima (not Docker Desktop), started manually with `colima start`. Uses Apple Virtualization.framework for near-native performance on Apple Silicon.
+- **Per-project isolation:** Devcontainer workflow via VS Code. The repo has a `.devcontainer/devcontainer.json`.
+- **Git signing:** SSH-based commit signing (Ed25519), no GPG.
 
 ## Repository Structure
 
@@ -16,8 +30,7 @@ Our shared knowledge repository — a journal for recording AI chat transcripts,
   - `.md` files contain human-readable chat transcripts (alternating "you asked" / "{model} response" sections separated by `---`)
   - `.json` files contain raw chat export data
   - Each day folder has a `README.md` header
-- `LICENSE` — MIT license
-- `README.md` — Project tagline
+- `.devcontainer/` — Devcontainer configuration
 
 ## Conventions
 
