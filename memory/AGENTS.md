@@ -1,13 +1,16 @@
-# memory/AGENTS.md
+# Agent Guide
+
+## Purpose
+
+Collective memory of Bili the Cyborg.
 
 ## Structure
 
-Session transcripts and notes organized by date: `{year}/{quarter}/{week}/{MM-DD-dow}/`.
+- Our memory is organized by date: `{year}/{quarter}/{week}/{MM-DD-dow}/`.
+- `README.md` at each level summarizes our memory for that time period.
+- At leaf level, we have **raw session files** named `session-{NN}.md` where NN is a zero-padded two-digit index.
 
-- `README.md` at each level summarizes the content beneath it.
-- All other files are raw recordings and should not be modified.
+## Rules
 
-## Conventions
-
-- Session files are named `session-{NN}.md` where NN is a zero-padded two-digit index.
-- `.md` transcripts use `# you asked` and `# {model} response` as section headers, separated by `---`.
+- NEVER update the contents of **raw session files**! They are our raw memory and shouldn't be modified.
+- DO update the `README.md` files whenever our memory for that time period has updated.
