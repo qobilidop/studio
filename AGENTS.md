@@ -56,6 +56,11 @@ Current state: only `memory/` is populated.
 - When uncertain, preserve raw context and add derived artifacts separately.
 - Prefer updating summaries/docs over rewriting historical raw logs.
 
+## Git Convention
+
+- For Codex-authored commits in this repo, include this trailer by default:
+  `Co-authored-by: Codex <codex@openai.com>`
+
 ## Scope Notes
 
 This file is high-level guidance. More specific instructions may appear in task prompts or other repo docs and should take precedence when they do not conflict.
