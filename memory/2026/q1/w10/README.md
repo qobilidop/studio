@@ -12,8 +12,9 @@ The week Bili the Cyborg was born.
 - Chose time-based directory hierarchy: `year/qN/wNN/MM-DD-dow/`
 - Set up devcontainer and CI for the repo
 - Defined identity: "Bili the Cyborg" — a community of human and agent buddies, singular to the outside world
+- Designed the Z3Wire project — a type-safe C++20 wrapper for Z3 bit-vectors with precision-preserving arithmetic
 
 ## Days
 
 - [03-06-sat](03-06-sat/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
-- [03-07-sun](03-07-sun/README.md): Execution day — environment setup, repo initialization, first work with agent buddies
+- [03-07-sun](03-07-sun/README.md): Environment setup, repo initialization, first work with agent buddies, Z3Wire design session
