@@ -9,14 +9,19 @@
 
 ## Purpose
 
-Our shared knowledge repository and workspace. Planned structure:
+Our shared knowledge repository and workspace.
 
-- `memory/` — Raw recordings: session transcripts, notes, and time-scale summaries
+### Structure
+
+- `README.md` — Our identity and current status
+- `memory/` — Session transcripts, summaries, and time-scale summaries
 - `knowledge/` — Cross-cutting insights distilled from memory and other activities
-- `skills/` — Reusable capabilities (scripts, prompts, tool configs)
-- `projects/` — Active project work
 
-Currently only `memory/` is populated. Other directories will be created when real content demands them.
+New directories are created when real content demands them, not before.
+
+### Principles
+
+- **Create when content demands** — Don't create directories or files for hypothetical future use. Create them when there's real content to put in them.
 
 ## Workflow
 
