@@ -15,5 +15,5 @@ The week Bili the Cyborg was born.
 
 ## Days
 
-- [03-06-sat](03-06-sat/SUMMARY.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
-- [03-07-sun](03-07-sun/SUMMARY.md): Execution day — environment setup, repo initialization, first work with agent buddies
+- [03-06-sat](03-06-sat/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
+- [03-07-sun](03-07-sun/README.md): Execution day — environment setup, repo initialization, first work with agent buddies

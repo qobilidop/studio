@@ -29,7 +29,7 @@ Currently only `memory/` is populated.
 - `memory/` — Chat transcripts and notes, organized by date: `memory/{year}/{quarter}/{week}/{MM-DD-dow}/`
   - `.md` files contain human-readable chat transcripts (alternating "you asked" / "{model} response" sections separated by `---`)
   - `.json` files contain raw chat export data
-  - Each day folder has a `README.md` header
+  - `README.md` at each level summarizes the memories beneath it
 - `.devcontainer/` — Devcontainer configuration
 
 ## Conventions
