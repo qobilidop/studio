@@ -1,16 +1,35 @@
-# Agent Guide
+# Memory
 
-## Purpose
+Context from the past.
 
-Collective memory of Bili the Cyborg.
+## Principles
+
+- Keep immutable **session files** (transcripts or summaries) as our raw memory.
+- Maintain summaries at all levels to facilitate lookup.
 
 ## Structure
 
-- Our memory is organized by date: `{year}/{quarter}/{week}/{MM-DD-dow}/`.
-- `README.md` at each level summarizes our memory for that time period.
-- At leaf level, we have **session files** named `session-{NN}.md` — transcripts or summaries of individual sessions.
+- Directory pattern: `{year}/{quarter}/{week}/{day}/`
+  - `{year}` as `YYYY` like `2026`.
+  - `{quarter}` as `qN` like `q1`.
+  - `{week}` as `wNN` like `w10`.
+  - `{day}` as `MM-DD-dow` like `03-06-fri`.
+- File types:
+  - `session-NN.md`: Raw **session files**. Leaf node only.
+  - `MEMORY.md`: Directory-level memory summary optimized for agent consumption.
+  - `README.md`: Directory-level memory summary optimized for human consumption.
+
+### What to cover in `MEMORY.md`?
+
+- You decide what works best for you.
+
+### What to cover in `README.md`?
+
+- What are the highlights (if only)?
+- What lessons have we learned (if only)?
+- Per-child summaries.
 
 ## Rules
 
-- NEVER update the contents of **session files**! They are our recorded memory and shouldn't be modified.
-- DO update the `README.md` files whenever our memory for that time period has updated.
+- NEVER update **session files**!
+- DO update `MEMORY.md` and `README.md` files when any session files under that directory are updated.
