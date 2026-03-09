@@ -16,6 +16,8 @@ Context from the past.
   - `{day}` as `MM-DD-dow` like `03-06-fri`.
 - File types:
   - `session-NN.md`: Raw **session files**. Leaf node only.
+     - `session-00.md` is always my daily log, a background chat I keep throughout the day.
+     - Other session files are more focused work sessions.
   - `MEMORY.md`: Directory-level memory summary optimized for agent consumption.
   - `README.md`: Directory-level memory summary optimized for human consumption.
 
@@ -25,8 +27,8 @@ Context from the past.
 
 ### What to cover in `README.md`?
 
-- What are the highlights (if only)?
-- What lessons have we learned (if only)?
+- What are the highlights (if any)?
+- What lessons have we learned (if any)?
 - Per-child summaries.
 
 ## Rules
