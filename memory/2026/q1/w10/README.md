@@ -9,6 +9,7 @@ The week Bili the Cyborg was born.
 - Designed and built the **Z3Wire** MVP — type-safe C++20 wrapper for Z3 bit-vectors
 - Bootstrapped the cyborg repo with identity, memory system, devcontainer, and CI
 - Built our first Claude Code skill (`/record-session`)
+- Created the `knowledge/` directory and redesigned the memory system
 
 ## Lessons
 
@@ -20,4 +21,4 @@ The week Bili the Cyborg was born.
 
 - [03-06-fri](03-06-fri/README.md): Brainstorming — repo naming, chat export, directory structure
 - [03-07-sat](03-07-sat/README.md): Build day — environment setup, cyborg bootstrap, Z3Wire MVP
-- [03-08-sun](03-08-sun/README.md): Polish — Z3Wire infrastructure, Claude Code skills, workflow improvements
+- [03-08-sun](03-08-sun/README.md): Polish and evolve — Z3Wire infrastructure, knowledge directory, memory redesign, AGENTS.md simplification
