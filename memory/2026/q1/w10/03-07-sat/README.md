@@ -1,24 +1,22 @@
 # 2026-03-07 (Saturday)
 
-Five sessions:
+The build day — from factory reset to two working repos.
 
-- **session-00**: Day log from morning to evening. Factory reset MacOS and rebuilt a minimal dev environment: Homebrew, VS Code, 1Password, Chrome, Colima (chosen over Docker Desktop for minimalism). Set up SSH key with Ed25519 signing (no GPG). Went for a pre-lunch run while listening to Lex Fridman #491 (OpenClaw). Refined the Cyborg repo architecture into four tiers: `memory/`, `knowledge/`, `ability/`, `activity/`. Installed coding agents (Claude Code, Codex, Gemini CLI) and began working with them in the repo. Later: noticed Z3 repo has agentic workflows, discussed cross-session context sync between Gemini web UI and CLI agents (proposed a `web-sync.md` briefing pattern), and settled on squash merging as the PR merge policy for clean commit history.
+## Highlights
 
-- **session-01**: Designed the **Z3Wire** project — a header-only C++20 type-safe abstraction layer over Z3's bit-vector and boolean types. Key design decisions:
-  - **Name/namespace**: Z3Wire / `z3w::`
-  - **Scope**: Strictly QF_BV (bit-vectors) and booleans, no unbounded integers or arrays
-  - **Core types**: `z3w::BitVec<Width, IsSigned>` with aliases `z3w::ubv<W>` and `z3w::sbv<W>`, plus `z3w::Bool`
-  - **Casting API** (3 tiers): `cast<T>` (raw hardware), `checked_cast<T>` (returns symbolic overflow bool), `safe_cast<T>` (compile-time lossless guarantee)
-  - **Arithmetic**: Precision-preserving "natural growth" for +/- (result width = max(W1,W2)+1), inspired by CIRCT's HWArith
-  - **Bitwise ops**: Strict width matching enforced via static_assert
-  - **Bit slicing**: `extract<High,Low>` (static) and `extract<Width>(val, symbolic_offset)`
-  - **Concat**: Variadic `concat(msb, lsb, ...)` returning `ubv<W1+W2+...>`
-  - **MVP scope**: Bitwise logic + add/sub only (no multiply/divide initially)
-  - **Implementation**: Header-only, zero-overhead wrappers around `z3::expr`
-  - Plan to vibe-code the prototype, then harden with tests and CI in the same repo
+- Factory reset macOS; set up minimal dev environment (Homebrew, VS Code, Colima, SSH signing)
+- Designed and built Z3Wire from concept to complete MVP in one day
+- Bootstrapped the cyborg repo: identity, memory conventions, devcontainer, CI, gitleaks
 
-- **session-02**: First Claude Code working session — bootstrapped the cyborg repo. Set up identity (README, CLAUDE.md), memory conventions (hierarchical README summaries), devcontainer + CI, gitleaks pre-commit hook and CI workflow. Discussed repo structure (renamed ability→skills, activity→projects), decided Z3Wire will be a fully separate repo.
+## Lessons
 
-- **session-03**: Built Z3Wire from scaffolding to complete MVP — Bool wrapper, BitVec<W,S> with full bitwise/arithmetic/shift/cast/extract/concat ops, three runnable examples, clang-format + lint tooling, dev.sh Docker wrapper, Google-style flat layout, and comprehensive AGENTS.md.
+- Stuck Explore subagent: can hang on network-heavy operations; cancel with Escape
+- CLAUDE.md best practices: keep under 200 lines, be specific, avoid stating the obvious
 
-- **session-04**: Housekeeping — cleaned up memory naming conventions (`chat-` → `session-`, dropped date from filenames, removed JSON exports, consolidated CLAUDE.md → AGENTS.md, 2-digit session index). Also debugged a stuck Explore subagent and discussed CLAUDE.md best practices.
+## Sessions
+
+- **session-00**: Day log — environment setup, repo architecture brainstorming, coding agent installation
+- **session-01**: Z3Wire design — type system, casting API, precision-preserving arithmetic
+- **session-02**: Cyborg repo bootstrap — identity, memory, devcontainer, CI, gitleaks
+- **session-03**: Z3Wire MVP build — Bool, BitVec, all operations, examples, tooling
+- **session-04**: Memory conventions cleanup — renamed files, consolidated agent instructions

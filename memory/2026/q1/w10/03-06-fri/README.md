@@ -1,9 +1,17 @@
 # 2026-03-06 (Friday)
 
-Five sessions:
+Day zero — brainstorming with Gemini and ChatGPT before any repo existed.
 
-- **session-00**: Random thought log — noted papers on "epiplexity" (arXiv:2601.03220) and AI-assisted physics discovery (arXiv:2603.04735), plus a TODO to watch the OpenClaw/Lex Fridman podcast #491.
-- **session-01**: Explored using Codex to contribute to agent-first GitHub repos via fork + PR. Discussed autonomous maintenance loops, self-healing repositories, and designed a minimal AI contributor bot architecture.
-- **session-02**: Decided on dual-format export strategy (JSON + Markdown) for chat archives. Chose year/quarter/week directory hierarchy aligned with life rhythm. Discussed legal concerns of open-sourcing chats (MIT license, PII redaction).
-- **session-03**: Named the two repos — "Cyborg" (brave new agentic craft) and "Artisan" (good old manual craft). Explored naming through Centaur chess history, linguistic symmetry, and persona pairing.
-- **session-04**: Detailed directory structure discussion for the Cyborg repo. Settled on `year/qN/wNN/MM-DD-dow/` hierarchy with .md and .json side by side. Explored the concept of time-based universal context folders for agent-friendly navigation.
+## Highlights
+
+- Named the repos: **Cyborg** and **Artisan** — explored through centaur chess history and linguistic pairing
+- Settled on `year/quarter/week/day/` directory hierarchy aligned with life rhythm
+- Explored the idea of AI contributor bots and self-healing repositories
+
+## Sessions
+
+- **session-00**: Random thought log — noted papers on "epiplexity" and AI-assisted physics discovery
+- **session-01**: Explored using Codex to contribute to agent-first repos via fork + PR
+- **session-02**: Decided on dual-format export (JSON + Markdown), chose time-based hierarchy
+- **session-03**: Named the repos — "Cyborg" and "Artisan"
+- **session-04**: Detailed directory structure discussion

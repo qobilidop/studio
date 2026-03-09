@@ -2,24 +2,22 @@
 
 The week Bili the Cyborg was born.
 
-## Key Events
+## Highlights
 
-- Explored ideas around AI-human collaboration, naming repos "Cyborg" and "Artisan"
-- Factory reset MacOS; rebuilt a minimal dev environment (Homebrew, VS Code, Colima, 1Password)
-- Set up SSH-based commit signing (Ed25519)
-- Installed coding agents: Claude Code, Codex, Gemini CLI
-- Defined Cyborg repo vision: four-tier structure (`memory/`, `knowledge/`, `skills/`, `projects/`)
-- Chose time-based directory hierarchy: `year/qN/wNN/MM-DD-dow/`
-- Set up devcontainer and CI for the repo
-- Set up gitleaks pre-commit hook and CI workflow for secret scanning
-- Defined identity: "Bili the Cyborg" — a community of human and agent buddies, singular to the outside world
-- Designed and built the Z3Wire MVP — a type-safe C++20 wrapper for Z3 bit-vectors with precision-preserving arithmetic
-- Cleaned up memory conventions: `chat-` → `session-`, consolidated CLAUDE.md → AGENTS.md
-- Polished Z3Wire infrastructure: split CI, added CMake, Codecov, Renovate, docs overhaul
-- Built first Claude Code skill (`/record-session`), established global skill deployment convention
+- Named the dual repos: **Cyborg** (brave new agentic craft) and **Artisan** (good old manual craft)
+- Factory reset macOS and rebuilt a minimal dev environment from scratch
+- Designed and built the **Z3Wire** MVP — type-safe C++20 wrapper for Z3 bit-vectors
+- Bootstrapped the cyborg repo with identity, memory system, devcontainer, and CI
+- Built our first Claude Code skill (`/record-session`)
+
+## Lessons
+
+- Keep CLAUDE.md short and specific — bloat causes instructions to get ignored
+- "Create when content demands" — don't build structure for hypothetical future use
+- Subagents can hang on network-heavy tasks; cancel and work locally
 
 ## Days
 
-- [03-06-fri](03-06-fri/README.md): Brainstorming sessions — repo naming, chat export strategy, directory structure, AI contributor bot design
-- [03-07-sat](03-07-sat/README.md): Environment setup, repo initialization, Z3Wire design + full MVP implementation, memory conventions cleanup
-- [03-08-sun](03-08-sun/README.md): Z3Wire infrastructure polish, Claude Code skills exploration, cyborg workflow improvements
+- [03-06-fri](03-06-fri/README.md): Brainstorming — repo naming, chat export, directory structure
+- [03-07-sat](03-07-sat/README.md): Build day — environment setup, cyborg bootstrap, Z3Wire MVP
+- [03-08-sun](03-08-sun/README.md): Polish — Z3Wire infrastructure, Claude Code skills, workflow improvements
