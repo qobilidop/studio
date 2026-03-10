@@ -34,4 +34,4 @@ Context from the past.
 ## Rules
 
 - NEVER update **session files**!
-- DO update `MEMORY.md` and `README.md` files when any session files under that directory are updated.
+- DO update `MEMORY.md` and `README.md` files when relevant session files are updated.

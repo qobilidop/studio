@@ -25,3 +25,8 @@ Not meant to be exhaustive. Only the important top-level ones.
 - `README.md` - Overview of this repo
 - `memory/` - Where to look up context from the past
 - `knowledge/` - Haven't quite decided its purpose and scope, but we'll figure it out
+
+## Rules
+
+- Ask for permission before commit.
+- Push after commit.
