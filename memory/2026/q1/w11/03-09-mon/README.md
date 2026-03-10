@@ -6,8 +6,9 @@ First weekday — winding down from a packed weekend, reflecting and planning.
 
 - Read Boris Tane's Claude Code blog post — affirmed the plan-first, document-driven approach
 - Explored personal website hosting options with digital longevity as a key concern
-- Evening: kicked off agentic coding session to build the `sync-memory` skill
+- Built `sync-memory` skill and simplified `record-session` — clean separation of concerns
 
 ## Sessions
 
 - **session-00**: Daily log (Gemini) — commute podcast, Boris Tane article, personal website domain/hosting analysis, macOS auto-punctuation disabled
+- **session-01**: Built `sync-memory` skill, simplified `record-session` to single responsibility
