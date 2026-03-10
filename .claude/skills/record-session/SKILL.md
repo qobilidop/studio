@@ -5,7 +5,7 @@ disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
-Record a summary of the current Claude Code session to our collective memory at `~/i/cyborg/memory/`.
+Record a summary of the current Claude Code session to a session file in `~/i/cyborg/memory/`.
 
 ## Steps
 
@@ -21,24 +21,11 @@ Record a summary of the current Claude Code session to our collective memory at 
    - Capture key decisions, facts, file paths, commands, and lessons — whatever helps you pick up context later
    - Be concise but don't omit details that would be hard to recover
 
-3. **Update MEMORY.md files** up the chain (agent-optimized):
-   - Focus on key decisions, structured facts, and lessons
-   - Use whatever format works best for future agent consumption
-   - When updating an existing MEMORY.md, preserve existing content and add/update entries as needed
-
-4. **Update README.md files** up the chain (human-optimized):
-   - Focus on highlights, lessons learned, and per-child summaries
-   - **Day README** (`{day}/README.md`): Title is `# {YYYY-MM-DD} ({DayOfWeek})`. Brief highlights, then list sessions.
-   - **Week README** (`w{NN}/README.md`): Title is `# {year} W{NN} ({month} {start}–{end})`. Highlights, lessons, day summaries.
-   - **Quarter README** (`q{N}/README.md`): Title is `# {year} Q{N}`. List weeks with one-line descriptions.
-   - **Year README** (`{year}/README.md`): Title is `# {year}`. List quarters with one-line descriptions.
-   - When updating an existing README, preserve existing content and add/update entries as needed.
-   - When creating a new README, follow the patterns from existing READMEs.
-
-5. **Report** the session file path and a brief confirmation.
+3. **Report** the session file path and a brief confirmation.
 
 ## Rules
 
 - Follow the conventions in `~/i/cyborg/memory/AGENTS.md`.
 - Do NOT modify existing session files.
 - Do NOT ask the user for the session content — summarize from the current conversation context.
+- This skill only writes the session file. Use `/sync-memory` separately to update summary files.
