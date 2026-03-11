@@ -6,6 +6,9 @@
 - Explored personal website hosting: GitHub Pages vs custom domain, digital longevity concerns
 - Built `sync-memory` skill — re-reads today+yesterday sessions, updates summaries up the chain
 - Simplified `record-session` skill — now only writes session file (single responsibility)
+- Z3Wire compile-fail tests (24 targets), scope narrowed to combinational logic primitives
+- Z3Wire README rewrite with hardware verification framing, tooling overhaul (buildifier, mdformat, shfmt, shellcheck)
+- Bazel 9 upgrade, removed mult/div/mod from roadmap (YAGNI)
 - Deep dive into combinational logic: ITE as fundamental routing primitive
 - C++ vs Python tradeoff for hardware verification tooling
 - Recorded notable projects: HashMath, AutoCLRS, Bjarke Roune's AI chip design doc

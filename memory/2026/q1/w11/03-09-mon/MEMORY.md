@@ -1,6 +1,6 @@
 # 2026-03-09 (Monday)
 
-First day of W11. Two sessions.
+First day of W11. Four sessions.
 
 ## Key events
 
@@ -8,6 +8,7 @@ First day of W11. Two sessions.
 - Noted superpowers plugin aligns with Boris' structured planning-before-execution philosophy
 - Commute: Lex Fridman Podcast with Peter Steinberger
 - Evening: agentic coding session — built sync-memory skill, simplified record-session
+- Major z3wire work: compile-fail tests, scope clarification, README rewrite, tooling overhaul
 
 ## Readings
 
@@ -27,6 +28,24 @@ First day of W11. Two sessions.
 - Simplified `record-session` skill: now only writes session file, no summary updates
 - Separation of concerns: record-session = raw memory, sync-memory = summaries
 - Design: "today+yesterday" sidesteps timezone ambiguity; idempotent; handles cross-week boundaries
+
+## Z3Wire work (sessions 02–03)
+
+### session-02: Compile-fail tests + tagline update
+- 24 compile-fail test targets in `compile_fail_tests/` with custom Starlark rule
+- Key patterns: `template class` for class-level guards, `checked<>()` with explicit template args for SFINAE
+- Tagline: "Type-safe Z3 bit-vectors for hardware verification. C++20 and above."
+- Renamed overflow/underflow → above_max/below_min (underflow is a float concept)
+- Added flat structure principle, 72-char commit subject limit to AGENTS.md
+
+### session-03: Scope clarification, README rewrite, tooling overhaul
+- **Removed mult/div/mod from roadmap** — Z3Wire covers combinational logic primitives; YAGNI
+- Adopted "combinational logic primitives" as scope framing
+- README rewrite: hardware verification framing, carry flag example
+- Added formatters/linters: buildifier (Bazel), mdformat (Markdown), shfmt + shellcheck (Shell)
+- Unified in `tools/format.sh` and `tools/lint.sh`
+- Bazel 8.6.0 → 9.0.0, rules_cc 0.0.17 → 0.2.17
+- Docker/Colima: `docker-buildx` CLI plugin path fix via `~/.docker/config.json`
 
 ## System preferences
 
