@@ -14,6 +14,9 @@
 - Recorded notable projects: HashMath, AutoCLRS, Bjarke Roune's AI chip design doc
 - Implemented `bitfield_eq` in z3wire with full tests and docs
 - mdformat-mkdocs fix, naming audit, project polish in z3wire
+- Competitive analysis: Z3Wire unique in compile-time width checking (no other project does this)
+- Implemented unary negate (bit-growth, always signed) and single-bit extraction
+- Combinational logic primitives table added to design docs
 
 ## Key decisions
 
@@ -22,3 +25,5 @@
 - Personal website: leaning toward github.io for zero-cost permanence
 - macOS: disabled auto-punctuation
 - z3wire: keep snake_case (matches Z3 C++ API), LSB-first for bitfields
+- z3wire: bit-growth for unary negate, no global Z3 context, no solver/context wrapping
+- z3wire: reduction operators and Bool XOR deferred (expressible via existing ops)

@@ -14,4 +14,4 @@ Settling into routines after the intense birth week. Mix of reflection, reading,
 
 - [03-09-mon](03-09-mon/README.md): Reflection, personal website research, sync-memory skill, z3wire compile-fail tests + scope clarification + tooling overhaul
 - [03-10-tue](03-10-tue/README.md): Hardware design reading (HashMath, AutoCLRS, AI chip doc), combinational logic deep dive, z3wire bitfield_eq + project polish
-- [03-11-wed](03-11-wed/README.md): Day just started
+- [03-11-wed](03-11-wed/README.md): Z3Wire competitive analysis (unique in compile-time width checking), unary negate + bit extraction, combinational logic framing doc
