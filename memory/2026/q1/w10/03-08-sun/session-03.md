@@ -1,5 +1,7 @@
 Z3Wire session — continued from session-01 (concrete types implementation). This session focused on cleanup, a new feature, and build restructuring.
 
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
+
 Key work:
 
 1. **Unified `size_t` width parameter** — `Int` used `unsigned W`, `BitVec` used `size_t W`. Unified to `size_t` everywhere, which eliminated the `std::enable_if_t` workaround and `NOLINT` suppressions for mixed concrete+symbolic overloads. Root cause: clang-18 couldn't handle `requires` clauses when template parameter types differed (`size_t` vs `unsigned`).

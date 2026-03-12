@@ -1,5 +1,7 @@
 # Session 01 — Z3Wire infrastructure and docs polish
 
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
+
 ## What we did
 
 ### CI organization

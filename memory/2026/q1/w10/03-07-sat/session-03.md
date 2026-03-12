@@ -1,5 +1,7 @@
 # z3wire — first implementation session
 
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
+
 ## claude-opus-4-6 summary
 
 ### What we accomplished

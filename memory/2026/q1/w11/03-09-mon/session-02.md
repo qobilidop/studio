@@ -1,7 +1,7 @@
 # Z3Wire: Compile-Fail Tests + Tagline Update
 
 ## Project
-z3wire (`~/i/z3wire`) — C++20 type-safe wrapper around Z3 bit-vectors.
+Z3Wire (https://github.com/qobilidop/z3wire) — C++20 type-safe wrapper around Z3 bit-vectors.
 
 ## What happened
 

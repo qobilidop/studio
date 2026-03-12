@@ -1,6 +1,6 @@
 # Z3Wire Feature Work + API Design Discussion
 
-Project: z3wire (`~/i/z3wire`)
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
 Commits: e533934, d6b94cf, e461a77, 5515d9e
 
 ## What happened

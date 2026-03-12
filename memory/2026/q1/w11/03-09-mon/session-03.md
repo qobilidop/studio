@@ -1,6 +1,6 @@
 # Z3Wire: Scope Clarification, README Rewrite, Tooling Overhaul
 
-Project: `/Users/qobilidop/i/z3wire`
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
 
 ## Key Decisions
 

@@ -1,6 +1,6 @@
 # Z3Wire: Docs Reorg, bitfield_eq, Project Polish
 
-Project: `~/i/z3wire`
+Project: Z3Wire (https://github.com/qobilidop/z3wire)
 
 ## Work Done
 
