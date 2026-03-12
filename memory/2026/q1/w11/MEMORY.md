@@ -27,3 +27,7 @@
 - z3wire: keep snake_case (matches Z3 C++ API), LSB-first for bitfields
 - z3wire: bit-growth for unary negate, no global Z3 context, no solver/context wrapping
 - z3wire: reduction operators and Bool XOR deferred (expressible via existing ops)
+
+## Lessons
+
+- Provide the right context to agents — they figure it out, often better than manual attempts

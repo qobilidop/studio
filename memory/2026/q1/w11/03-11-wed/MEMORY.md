@@ -2,8 +2,10 @@
 
 ## Sessions
 
-### session-00: Placeholder
-- No content yet.
+### session-00: Daily log (Gemini)
+- Very tired recently, went to sleep late (2 AM), took evening nap
+- Lesson: provide the right context to agents → they figure it out, often better than what human comes up with
+- Team dinner at Gochi Japanese Fusion Tapas
 
 ### session-01: Z3Wire feature work + API design (Claude)
 - Ergonomics brainstorm: identified 4 pain points (.raw() noise, literal verbosity, scoped solver checks, struct construction); deferred helpers (YAGNI)
@@ -18,6 +20,9 @@
 - Reduction operators deferred (expressible via comparisons)
 - Bool XOR deferred (expressible as `!=`)
 - No global Z3 context (thread safety), no solver/context wrapping
+
+## Lessons
+- Provide the right context to agents — they can figure things out, often better than manual attempts
 
 ## Open items
 - `SInt::signed_value()` accessor
