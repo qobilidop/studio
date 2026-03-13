@@ -23,6 +23,9 @@
 - Added Bool XOR (`^` as `!=`)
 - Brainstormed "P4PER" acronym for P4 technical proposals
 - Bookmarked Terence Tao video on formalizing proofs in Lean with Claude Code
+- Conceived P4kt project — Kotlin eDSL for P4-16 networking language
+- Deep language comparison for eDSL hosting (Kotlin, C++, Rust, Scala 3, Zig, Nim)
+- Explored MLIR integration options for Kotlin (FFM/jextract, JavaCPP, textual generation)
 
 ## Key decisions
 
@@ -37,6 +40,10 @@
 - z3wire: `std::integral` concept for `checked()`, runtime truncation for out-of-range
 - z3wire: `exact_eq` for strict type matching vs relaxed `==`
 - z3wire: C++20 enabled globally via `.bazelrc`
+- P4kt: Kotlin chosen — best balance of DSL syntax, structural safety, and Google support
+- P4kt: test strategy uses p4c testdata as ground truth oracle
+- P4kt: start with "Level 1 curriculum" of simplest p4c test files
+- Google language constraint: C++, Java, Python, Go, Dart, Kotlin, Rust
 
 ## Lessons
 
@@ -46,4 +53,5 @@
 
 - P4 GSoC repo work this weekend
 - P4PER acronym finalization
+- P4kt Pi Day (3/14) kickoff
 - `SInt::signed_value()` accessor
