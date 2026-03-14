@@ -26,6 +26,12 @@
 - Conceived P4kt project — Kotlin eDSL for P4-16 networking language
 - Deep language comparison for eDSL hosting (Kotlin, C++, Rust, Scala 3, Zig, Nim)
 - Explored MLIR integration options for Kotlin (FFM/jextract, JavaCPP, textual generation)
+- Designed **wiregen** — Z3Wire code generation module
+  - Protobuf txtpb meta-schema as single source of truth
+  - Triad output: symbolic Z3Wire struct, concrete C++ struct, Protobuf message
+  - Supports nested structs, fixed-size arrays, enums ("Smart Enum" pattern)
+  - Surveyed hardware register formats (SystemRDL, IP-XACT, CMSIS-SVD, OpenTitan reggen)
+- Type system exploration: OCaml GADTs, Rust const generics, Zig comptime, Idris/Agda dependent types
 
 ## Key decisions
 
@@ -40,6 +46,9 @@
 - z3wire: `std::integral` concept for `checked()`, runtime truncation for out-of-range
 - z3wire: `exact_eq` for strict type matching vs relaxed `==`
 - z3wire: C++20 enabled globally via `.bazelrc`
+- z3wire wiregen: `tools/wiregen/` directory, Protobuf txtpb meta-schema approach
+- z3wire wiregen: triad output (symbolic + concrete + protobuf), separate C++ enum from Protobuf enum
+- z3wire wiregen: "Smart Enum" pattern — struct wrapping `z3wire::UInt<W>` with `is_valid()`
 - P4kt: Kotlin chosen — best balance of DSL syntax, structural safety, and Google support
 - P4kt: test strategy uses p4c testdata as ground truth oracle
 - P4kt: start with "Level 1 curriculum" of simplest p4c test files
@@ -48,10 +57,12 @@
 ## Lessons
 
 - Provide the right context to agents — they figure it out, often better than manual attempts
+- Recognize when to take breaks from intense agentic coding — stepping away helps ideas solidify
 
 ## Open items
 
 - P4 GSoC repo work this weekend
 - P4PER acronym finalization
 - P4kt Pi Day (3/14) kickoff
+- wiregen implementation (architecture designed, not yet built)
 - `SInt::signed_value()` accessor
