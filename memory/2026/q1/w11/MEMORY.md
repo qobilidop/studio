@@ -59,10 +59,25 @@
 - Provide the right context to agents — they figure it out, often better than manual attempts
 - Recognize when to take breaks from intense agentic coding — stepping away helps ideas solidify
 
+## Saturday (Pi Day) - P4kt launch
+
+- Launched P4kt (github.com/qobilidop/p4kt) on Pi Day - from empty repo to full VSS coverage in one day
+- 6 sessions: project setup, design, implementation, tooling, docs, complete VSS
+- Architecture: DSL builders (mutable) -> IR (immutable) -> Renderer (P4 text)
+- Key design: P4 structs as native Kotlin classes for IDE autocomplete (not builder pattern)
+- Constructor references (`::ClassName`) over reflection - local classes with captures break reflection
+- `provideDelegate` for eager delegation (came up 3 times across different features)
+- Tooling: Bazel+Bzlmod, devcontainer (Colima), ktfmt, dprint, detekt, CI, MkDocs Material docs site
+- Golden tests: examples/ with .kt + .p4 pairs as both regression tests and user docs
+- Subagent-driven development for VSS completion (18 tasks, 6 dispatches)
+- Lesson: subagents bypass parent's Stop hook - added pre-commit hook as structural guarantee
+- Discussed Habermas's philosophy mapped to open source communities
+- VibeTensor paper (arxiv:2601.16238) validates agentic coding + testing harness approach
+
 ## Open items
 
-- P4 GSoC repo work this weekend
+- P4 GSoC repo work
 - P4PER acronym finalization
-- P4kt Pi Day (3/14) kickoff
+- P4kt: type parameters, abstract declarations, architecture-as-library pattern
 - wiregen implementation (architecture designed, not yet built)
 - `SInt::signed_value()` accessor
