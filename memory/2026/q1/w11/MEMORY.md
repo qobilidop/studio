@@ -74,10 +74,29 @@
 - Discussed Habermas's philosophy mapped to open source communities
 - VibeTensor paper (arxiv:2601.16238) validates agentic coding + testing harness approach
 
+## Sunday - P4kt continued: architecture-as-library, Gradle, core.p4 completion
+
+- Dual build: added Gradle 8.13 alongside Bazel, both pass
+- `P4.Library` base class for reusable architecture definitions (vss_arch -> P4.Library object)
+- `P4` object as single DSL entry point (factories, constants, base classes)
+- File reorg by audience: P4.kt (user API), Builders.kt (internals), Emit.kt (rendering)
+- `p4kt.p4include` package: Core and V1model objects mirroring p4c's p4include/
+- **core.p4 100% complete** — every construct from upstream p4c implemented
+- Type parameters (`P4Type.Var`, `typeParam()` delegate), delegate-based naming throughout
+- `@P4DslMarker` added to all builder classes
+- `P4TypeDecl` IR for abstract parser/control/package type declarations
+- `P4Include` IR for `#include` directives, hex literals (`P4.hex()`), `SignedLit`
+- `v1model_basic.kt` example from p4lang/tutorials + ergonomics assessment in docs
+- Renamed `vss_arch` -> `vss` for consistency
+- Kotlin learning: sealed classes, delegation (for P4kt work)
+- Read Leo de Moura ETAPS interview, bookmarked 谢赛宁 7-hour marathon interview
+- Completed all Teyvat quests (Genshin Impact)
+
 ## Open items
 
 - P4 GSoC repo work
 - P4PER acronym finalization
-- P4kt: type parameters, abstract declarations, architecture-as-library pattern
+- P4kt: extern-level type params, enum IR, v1model.p4 completion
+- P4kt: future examples blocked by header stacks, registers, hash, multi-field select
 - wiregen implementation (architecture designed, not yet built)
 - `SInt::signed_value()` accessor

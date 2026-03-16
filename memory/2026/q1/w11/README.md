@@ -14,6 +14,7 @@ Settling into routines after the intense birth week. Mix of reflection, reading,
 - Designed **wiregen** - Z3Wire code generation module using Protobuf txtpb meta-schema, triad output architecture
 - Explored type system boundaries: OCaml, Rust, Zig, Idris/Agda
 - **Pi Day: launched P4kt from scratch to full VSS coverage in one day** (6 sessions, native Kotlin classes for IDE autocomplete, subagent-driven development)
+- **Sunday: P4kt core.p4 100% complete**, added Gradle build, architecture-as-library pattern, `#include` support
 
 ## Days
 
@@ -23,3 +24,4 @@ Settling into routines after the intense birth week. Mix of reflection, reading,
 - [03-12-thu](03-12-thu/README.md): Z3Wire C++20 concepts + API simplification, P4kt project conception (Kotlin eDSL for P4-16, language comparison, p4c test strategy), P4PER brainstorm
 - [03-13-fri](03-13-fri/README.md): Wiregen architecture design (txtpb meta-schema, triad output, nested structs, arrays, enums), type system exploration, evening break
 - [03-14-sat](03-14-sat/README.md): Pi Day! Launched P4kt from scratch to full VSS coverage in one day (6 sessions, 17 tests passing)
+- [03-15-sun](03-15-sun/README.md): P4kt continued — architecture-as-library, Gradle support, core.p4 100% complete, examples + ergonomics assessment
