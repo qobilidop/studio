@@ -27,6 +27,18 @@
 - **Docs**: midpoint overflow README example, packet_gen example, consolidated example docs into .cc programs, dev/guide.md
 - **Tooling**: mdformat (wrap=80), clang-tidy tuning, clang-include-cleaner, CI renamed to "Lint"
 
+## Wednesday - Z3Wire API gaps, docs refinement, SInt storage (half day)
+
+- Bili sick in morning, back online ~2:43 PM
+- **API gap analysis**: compared against Z3 C++, Rust z3, Bitwuzla, cvc5, STP — multiply is top priority gap
+- **Weave register arrays**: concrete → `std::array`, symbolic → default-zero, proto → `map<uint32, RegType>`
+- **SInt storage**: changed to signed storage, removed `.bits()`, `.value()` sole accessor
+- **Naming**: `checked()` → `Checked()`, PascalCase for factory methods, snake_case for functions
+- **Docs overhaul**: removed redundant pages, restructured all usage docs with overview tables
+- **New page**: type-conversions.md (was casting.md), created examples/usage/ .cc files
+- **Safety issues**: `SymBool(z3::expr)` no sort check, `BitVec(uint64_t)` silent truncation — tracked in roadmap
+
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
+- Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors
