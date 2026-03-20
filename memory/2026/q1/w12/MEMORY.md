@@ -38,6 +38,20 @@
 - **New page**: type-conversions.md (was casting.md), created examples/usage/ .cc files
 - **Safety issues**: `SymBool(z3::expr)` no sort check, `BitVec(uint64_t)` silent truncation — tracked in roadmap
 
+## Thursday - Z3Wire API hardening, wide BitVec, fuzz testing, rotations
+
+- **Z3W_CHECK macro**: internal assertion macro (Abseil CHECK-compatible), guards uninitialized symbolic access
+- **FromExpr API**: `std::optional`-returning safe public API for z3::expr construction with sort/width validation
+- **Bool catch-all delete**: rejects all non-bool types (floats, pointers, nullptr)
+- **Concrete type cleanup**: Storage→ValueType, bits_→value_, mask()→truncate(), type_traits.h extraction
+- **Wide BitVec (W > 64)**: byte-array storage, unsigned-first then signed enabled, concat/extract Z3 bridge
+- **Google FuzzTest**: integrated, pinned Bazel to 8.2.1 (flatbuffers/Bazel 9 conflict), 24 width/signedness combos
+- **Fuzzer-found bug**: SInt<64> `to_concrete` — `get_numeral_int64()` throws when MSB set; fixed to uint64
+- **Extract fix**: symbolic-offset with wide index caused unsigned underflow; fixed with max(W, IdxW) extension
+- **Rotation ops**: rotl/rotr with 6 overloads, Z3 C API for variable rotation, preserves signedness
+- Fuzz tests for extract and rotation roundtrips
+- 35/35 tests pass, lint clean
+
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
