@@ -52,7 +52,21 @@
 - Fuzz tests for extract and rotation roundtrips
 - 35/35 tests pass, lint clean
 
+## Friday - Z3Wire infrastructure overhaul + explorations
+
+- **Weave Python → C++ rewrite**: ~800 lines Python → ~1200 lines C++ (Abseil + protobuf C++ API), golden tests byte-identical, removed all Python infrastructure
+- **Formatter/linter overhaul**: black → ruff format, mdformat → dprint, pip → uv; added dprint, ruff check, proto formatting via clang-format
+- **Z3 version pinning**: CMake switched to pre-built Z3 4.15.2 (was system 4.8.12)
+- **BuildBuddy remote cache**: `.bazelrc` `config:remote` (later renamed `config:ci`), `BUILDBUDDY_API_KEY` secret
+- **CMake extended for weave**: GoogleTest, Abseil, Protobuf from source; `find_package` over FetchContent; 8 tests
+- **Lint overhaul**: cmake `compile_commands.json` replaces Bazel-based header hunting
+- **Test reorg**: `compile_fail_tests/` → `tests/compile_fail/`, `fuzz_tests/` → `tests/fuzz/`
+- **Codecov removed**: overkill for small solo library
+- **Explorations**: SMT Arena idea (shelved), Lean 4 for formalization (P4 eDSL design in Lean), dprint chosen as project-wide formatter, pre-commit framework research
+
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
 - Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors
+- SMT Arena: differential testing of SMT solvers — idea shelved, revisit later
+- P4 eDSL in Lean: promising direction, paused
