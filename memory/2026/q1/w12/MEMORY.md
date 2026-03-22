@@ -71,6 +71,13 @@
 - **DisplayLink research**: Alt Mode = native GPU (zero latency), DisplayLink = software USB video. Decided on Alt Mode product for triple-monitor M1 setup.
 - Rest day, no other coding
 
+## Sunday - Repo organization design
+
+- **Multi-repo organization**: clarified purpose/boundaries for all repos. 5 meta-layer repos (Cyborg, Artisan, Hermit, Clert, Website) each with a decision test, plus dynamic standalone project repos.
+- **Key distinctions**: Cyborg (agentic) vs Artisan (human-first creative direction); Hermit (has voice, keep after death) vs Clert (structured data, get it done); dotfiles → Cyborg.
+- **Personal website roadmap**: identity page → blog → portfolio → digital garden. Start simple, content in website repo initially.
+- No coding — design discussion only.
+
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
