@@ -28,3 +28,4 @@ Back to Z3Wire after the P4kt sprint. Major infrastructure and API maturation.
 - [03-18-wed](03-18-wed/README.md): Half sick day — Z3Wire API gap analysis, SInt signed storage simplification, docs refinement with overview tables and example files
 - [03-19-thu](03-19-thu/README.md): Z3Wire API hardening (Z3W_CHECK, FromExpr), wide BitVec implementation, Google FuzzTest integration, extract fix, rotation ops
 - [03-20-fri](03-20-fri/README.md): Z3Wire Weave C++ rewrite, formatter/linter overhaul (dprint), BuildBuddy remote cache, Lean 4 explorations, pre-commit framework research
+- [03-21-sat](03-21-sat/README.md): Rest day — Weave module separated from core (CMake gating), P4buf concept brainstorm (deferred), DisplayLink docking station research

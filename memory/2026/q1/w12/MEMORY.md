@@ -64,9 +64,17 @@
 - **Codecov removed**: overkill for small solo library
 - **Explorations**: SMT Arena idea (shelved), Lean 4 for formalization (P4 eDSL design in Lean), dprint chosen as project-wide formatter, pre-commit framework research
 
+## Saturday - Rest day + Weave module separation + P4buf brainstorm
+
+- **Weave module separation**: moved `z3wire/weave/` to top-level `z3wire_weave/`, gated behind `option(Z3WIRE_BUILD_WEAVE OFF)` in CMake so core consumers never see abseil/protobuf deps. 4 commits (a226569..0172e60).
+- **P4buf concept**: subset of P4 as IDL. Input: .p4 with type/extern declarations. Output: Protobuf + language-native data structures. Externs → rpc/interfaces. Deferred until Z3Wire v0.1.0 ships.
+- **DisplayLink research**: Alt Mode = native GPU (zero latency), DisplayLink = software USB video. Decided on Alt Mode product for triple-monitor M1 setup.
+- Rest day, no other coding
+
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
-- Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors
+- Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors, v0.1.0 release
+- P4buf: P4 subset as IDL — deferred until Z3Wire v0.1.0
 - SMT Arena: differential testing of SMT solvers — idea shelved, revisit later
 - P4 eDSL in Lean: promising direction, paused
