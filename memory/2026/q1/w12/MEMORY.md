@@ -71,17 +71,23 @@
 - **DisplayLink research**: Alt Mode = native GPU (zero latency), DisplayLink = software USB video. Decided on Alt Mode product for triple-monitor M1 setup.
 - Rest day, no other coding
 
-## Sunday - Repo organization design
+## Sunday - Z3Wire operations overhaul + repo organization design
 
+- **Z3Wire operations doc overhaul**: added per-operation typing rule tables to all 8 operation categories. Consistent structure: intro → typing rules table → examples → code block.
+- **Arithmetic typing fix (CIRCT hwarith rules)**: `arith_result_width()` for mixed-signedness. `ui<A> op si<B>` → width `A+2` if `A>=B`, else `B+1`.
+- **Added `replace` operation**: inverse of `extract`. Static + symbolic-offset variants. Result preserves source signedness.
+- **Removed `bit<N>()`**: just `extract<N,N>()`. Core bit manipulation = extract, replace, concat.
+- **`SymBool` support**: added to `concat` (via `internal::sym_width` trait) and `ite`.
+- **Design decisions**: bitwise on signed+unsigned (cross-signedness forbidden), `implies` deferred, NAND/NOR/XNOR YAGNI.
 - **Multi-repo organization**: clarified purpose/boundaries for all repos. 5 meta-layer repos (Cyborg, Artisan, Hermit, Clert, Website) each with a decision test, plus dynamic standalone project repos.
 - **Key distinctions**: Cyborg (agentic) vs Artisan (human-first creative direction); Hermit (has voice, keep after death) vs Clert (structured data, get it done); dotfiles → Cyborg.
 - **Personal website roadmap**: identity page → blog → portfolio → digital garden. Start simple, content in website repo initially.
-- No coding — design discussion only.
+- Productivity limited by physical condition (headache from late night).
 
 ## Open items
 
 - Weave: Unpack(), Bazel rule, multi-file imports
-- Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors, v0.1.0 release
+- Z3Wire: multiply implementation, division/remainder, safety fixes for z3::expr constructors, `implies` operator, v0.1.0 release
 - P4buf: P4 subset as IDL — deferred until Z3Wire v0.1.0
 - SMT Arena: differential testing of SMT solvers — idea shelved, revisit later
 - P4 eDSL in Lean: promising direction, paused
