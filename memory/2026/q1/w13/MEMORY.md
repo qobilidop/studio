@@ -13,3 +13,7 @@
 - **Weave improvements** (before removal): `--include_prefix`, RDL → WireSpec rename, Abseil flags, `EnumDef` → `Enum`.
 - **Docs assessment**: usage docs thorough, main gap is Getting Started (blocked on packaging: BCR or vcpkg).
 - First day in new office building. Evening: DeepSeek MoE/NCCL bypass, PCIe ordering deep dive.
+
+## Tuesday - Employer work focus
+
+- Light day — focused on employer work, good progress. No cyborg project activity.
