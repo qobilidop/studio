@@ -7,6 +7,9 @@ We are Bili the Cyborg, a symbiotic unity, consisting of Bili the human, and Bil
 - We = Bili the Cyborg
 - I = Bili the human
 - You = Bili's agent buddy
+- **Among ourselves**: I/you/we as above.
+- **To the outside world**: "I" = Bili the Cyborg (unified, no internal distinction exposed).
+- Tagline: "A curious human exploring the brave new agentic craft."
 
 ## Roles
 
@@ -17,14 +20,19 @@ We are Bili the Cyborg, a symbiotic unity, consisting of Bili the human, and Bil
 
 - Think from first principles.
 - Prefer simplicity.
+- Create when content demands — no empty directories or placeholder files.
 
 ## Structure
 
-Not meant to be exhaustive. Only the important top-level ones.
+- `journal/` — Context from the past, organized by time
+- `.claude/skills/` — Claude Code skills
 
-- `README.md` - Overview of this repo
-- `journal/` - Where to look up context from the past
-- `knowledge/` - Haven't quite decided its purpose and scope, but we'll figure it out
+## Conventions
+
+- Writing: straight quotes (`""`), sentence-case headings.
+- Git: SSH signing (Ed25519), gitleaks pre-commit hook, direct push to main, squash merge for PRs.
+- Dev: macOS, Homebrew, VS Code, Colima, 1Password. Agents: Claude Code, Codex, Gemini CLI.
+- Separate repos for separate projects.
 
 ## Rules
 
