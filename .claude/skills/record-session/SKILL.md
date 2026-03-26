@@ -29,4 +29,4 @@ Record a summary of the current Claude Code session to a session file in `~/i/cy
 - Do NOT modify existing session files.
 - Do NOT ask the user for the session content — summarize from the current conversation context.
 - When the session involves work in a git repo, identify it by its remote GitHub URL, not the local path.
-- This skill only writes the session file. Use `/sync-memory` separately to update summary files.
+- This skill only writes the session file. Use `/sync-journal` separately to update summary files.

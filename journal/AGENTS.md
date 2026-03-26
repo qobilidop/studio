@@ -18,20 +18,15 @@ Context from the past.
   - `session-NN.md`: Raw **session files**. Leaf node only.
      - `session-00.md` is always my daily log, a background chat I keep throughout the day.
      - Other session files are more focused work sessions.
-  - `MEMORY.md`: Directory-level memory summary optimized for agent consumption.
-  - `README.md`: Directory-level memory summary optimized for human consumption.
-
-### What to cover in `MEMORY.md`?
-
-- You decide what works best for you.
+  - `README.md`: Directory-level summary. Key decisions, technical details, and per-child summaries.
 
 ### What to cover in `README.md`?
 
-- What are the highlights (if any)?
-- What lessons have we learned (if any)?
+- Key decisions, facts, technical details organized by topic.
 - Per-child summaries.
+- At day level: end with a Sessions section listing each session.
 
 ## Rules
 
 - NEVER update **session files**!
-- DO update `MEMORY.md` and `README.md` files when relevant session files are updated.
+- DO update `README.md` files when relevant session files are updated.
