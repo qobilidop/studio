@@ -1,18 +1,17 @@
 # 2026-03-21 (Saturday)
 
-## Rest day with explorations
-
-- **P4buf concept**: subset of P4 as IDL (like Protobuf but P4-based). Input: single .p4 file with type/extern declarations. Output: Protobuf representations + language-native data structures with runtime library for bit<N>/int<N>. Externs → rpc services (proto) or function/class declarations (C++). Draw inspiration from P4Runtime representations.
-- **Decision**: polish Z3Wire to v0.1.0 before starting P4buf
-- **Khalil Fong (方大同) family history**: watched Bilibili videos about his 6th-gen Hawaiian Chinese-American roots and California Gold Rush ancestors
-- **DisplayLink docking station research**: Alt Mode = native GPU signal (zero latency), DisplayLink = software-compressed USB video. Plugable = gold standard reliability, Anker Prime = premium (140W, smart display), Wavlink = budget. Decided on Alt Mode product. Synaptics DisplayLink Manager is the universal driver (Plugable just rebrands it).
-- **Historical texts terminology**: primary sources, archives, chronicles, manuscripts, artifacts, canon
-
-## Status
-- No coding done — rest day
-- Z3Wire v0.1.0 release is next priority
+Rest day with light work: separated Weave module from Z3Wire core so CMake consumers avoid heavy deps, brainstormed P4buf concept, and researched DisplayLink docking stations for triple-monitor setup.
 
 ## Sessions
 
-- **session-00**: Daily log — P4buf concept brainstorm (P4 subset as IDL, deferred until Z3Wire v0.1.0 ships), Khalil Fong family history videos, DisplayLink docking station research (decided on Alt Mode product for triple-monitor setup)
-- **session-01**: Z3Wire — separated Weave module from core (4 commits: directory move, CMake gating with `Z3WIRE_BUILD_WEAVE`, lint/docs updates)
+- **session-00**: Daily log — P4buf concept brainstorm (P4 subset as IDL, deferred until Z3Wire v0.1.0), Khalil Fong family history videos, DisplayLink docking station research (decided on Alt Mode product for triple-monitor M1 setup), historical texts terminology
+- **session-01**: Separated Weave module from Z3Wire core — moved z3wire/weave/ to top-level z3wire_weave/, gated behind option(Z3WIRE_BUILD_WEAVE OFF) in CMake, 4 commits
+
+## Agent index
+
+- DECISION: Weave separated to `z3wire_weave/` top-level dir; namespace `z3wire_weave`; CMake gated behind `Z3WIRE_BUILD_WEAVE` option (OFF by default) so core consumers never see abseil/protobuf (session-01)
+- DECISION: keep Weave in same repo (not separate package) — same-repo bundling guarantees version compatibility (session-01)
+- IDEA: P4buf — P4 subset as IDL; input: .p4 with type/extern declarations; output: protobuf + language-native data structures; externs map to rpc/interfaces; deferred until Z3Wire v0.1.0 ships (session-00)
+- GOTCHA: renaming Bazel package `//z3wire/weave` to `//z3wire_weave` changes default target name; need explicit `//z3wire_weave:weave` (session-01)
+- HARDWARE: DisplayLink — Alt Mode = native GPU (zero latency), DisplayLink = software USB video; Plugable = reliability, Anker Prime = premium; Synaptics DisplayLink Manager is universal driver (session-00)
+- PRIORITY: Z3Wire v0.1.0 release before starting any new projects (session-00)

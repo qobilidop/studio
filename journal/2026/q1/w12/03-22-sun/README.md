@@ -1,60 +1,21 @@
 # 2026-03-22 (Sunday)
 
-## Z3Wire operations doc overhaul + implementation fixes
-
-Major overhaul of `docs/usage/operations.md` — added per-operation typing rule tables to all 8 operation categories. Synced implementation and examples to match.
-
-### Doc improvements
-- Added typing rule tables to: Logical, Bitwise, Comparison, Arithmetic, Shifting, Rotation, Bit manipulation, Conditional selection
-- Renamed: "Mux" → "Conditional selection", "Unary negate" → "Arithmetic negation"
-- Split Comparison into "Boolean comparison" and "Integer comparison"
-- Used `A`, `B` for different-width params, `W` for same-width
-
-### Implementation changes
-- **Fixed arithmetic typing (CIRCT hwarith rules)**: `arith_result_width()` for mixed-signedness. `ui<A> op si<B>` → width `A+2` if `A>=B`, else `B+1`.
-- **Removed `bit<N>()`**: just `extract<N,N>()`. Won't add `set_bit` either — `replace` covers it.
-- **Added `replace` operation**: inverse of `extract`. Static + symbolic-offset variants. Result preserves source signedness.
-- **Added `SymBool` support to `concat`**: `internal::sym_width` trait + `internal::to_bv_expr` overloads.
-- **Added `SymBool` support to `ite`**: inline overload.
-
-### Design decisions
-- Bitwise ops on both signed/unsigned (matches Chisel, VHDL, Yosys). Cross-signedness forbidden.
-- Core bit manipulation = extract, replace, concat.
-- `implies` operator: deferred (just `!a || b`).
-- NAND/NOR/XNOR: YAGNI.
-
-### Files changed
-- `docs/usage/operations.md`, `docs/design/overview.md`
-- `z3wire/sym_bit_vec.h`, `z3wire/sym_bit_vec_test.cc`
-- `examples/usage/operations.cc`, `examples/usage/BUILD.bazel`
-
-## Repo organization design
-
-Clarified purpose/boundaries for multi-repo setup (design conversation, no code).
-
-### Meta-layer (5 stable repos)
-
-| Repo | Visibility | Purpose | Decision test |
-|------|-----------|---------|---------------|
-| Cyborg | Public | Agentic workspace | Am I working *with* agents? |
-| Artisan | Public | Human-first workspace | Am I the sole creative driver? |
-| Hermit | Private | Legacy — journal, reflections | Would I keep this after I die? |
-| Clert | Private | Logistics — life management | Do I just need this done? |
-| Website | Public | Personal website | Is this for the world to see *now*? |
-
-### Key decisions
-- Cyborg vs Artisan: separate to prevent agent infrastructure from polluting creative space
-- Hermit vs Clert: has voice → Hermit; structured data → Clert
-- Dotfiles → Cyborg
-- Personal website roadmap: identity page → blog → portfolio → digital garden
-
-## Daily log
-- Focus day on Z3Wire, but productivity hampered by physical condition (headache, stayed up late previous night)
-- Pre-work routine: brunch, dinner prep, shower, water prep, 30-min nap
-- Made progress but didn't complete all planned Z3Wire work
+Z3Wire operations doc overhaul with typing rule tables for all 8 categories, fixed arithmetic typing for mixed-signedness, added `replace` operation, and designed multi-repo organization with 5 meta-layer repos. Productivity limited by physical condition.
 
 ## Sessions
 
-- **session-00**: Daily log — focus day on Z3Wire, but productivity limited by physical condition (headache from late night). Pre-work routine: brunch, dinner prep, shower, nap.
-- **session-01**: Repo organization design — defined multi-repo structure with 5 meta-layer repos and decision tests, personal website roadmap (identity → blog → portfolio → digital garden)
-- **session-02**: Z3Wire operations doc overhaul — typing rule tables for all 8 op categories, fixed `arith_result_width()`, added `replace` op, `SymBool` concat/ite support, removed `bit<N>()`
+- **session-00**: Daily log — focus day on Z3Wire, but productivity hampered by headache from late night; pre-work routine (brunch, dinner prep, shower, nap)
+- **session-01**: Repo organization design — defined 5 meta-layer repos (Cyborg, Artisan, Hermit, Clert, Website) with decision tests, personal website roadmap (identity to blog to portfolio to digital garden)
+- **session-02**: Z3Wire operations doc overhaul — per-operation typing rule tables for all 8 categories, fixed arith_result_width() for mixed-signedness (CIRCT hwarith rules), added replace operation, SymBool concat/ite support, removed bit<N>()
+
+## Agent index
+
+- DECISION: arithmetic result width for mixed-signedness — `ui<A> op si<B>` yields width `A+2` if `A>=B`, else `B+1` (CIRCT hwarith rules); old rule `max(W1,W2)+1` was too narrow (session-02)
+- DECISION: `replace` operation added as inverse of `extract`; static + symbolic-offset variants; result preserves source signedness (session-02)
+- DECISION: removed `bit<N>()` (just `extract<N,N>`); core bit manipulation = extract, replace, concat (session-02)
+- DECISION: bitwise ops on both signed/unsigned (matches Chisel, VHDL, Yosys); cross-signedness forbidden (session-02)
+- DECISION: `implies` deferred to roadmap (just `!a || b`); NAND/NOR/XNOR YAGNI (session-02)
+- DESIGN: multi-repo organization — Cyborg (agentic), Artisan (human-first creative), Hermit (voice/legacy), Clert (logistics), Website (public-facing); decision tests for each (session-01)
+- DESIGN: Cyborg vs Artisan separated to prevent agent infrastructure polluting creative space; Hermit vs Clert — has voice = Hermit, structured data = Clert; dotfiles go in Cyborg (session-01)
+- DESIGN: personal website roadmap — identity page, then blog, portfolio, digital garden; content in website repo initially (session-01)
+- BLOCKER: physical condition (headache) reduced productivity (session-00)

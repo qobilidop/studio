@@ -1,37 +1,23 @@
 # 2026-03-20 (Friday)
 
-## Z3Wire CI & tooling overhaul (session-01)
-
-- **Z3 version pinning**: CMake switched from system `libz3-dev` (4.8.12) to pre-built Z3 4.15.2 from GitHub releases — fixes const-correctness build failure for `rotate_left`/`rotate_right`
-- **Formatter/linter overhaul**: black → ruff format, mdformat → dprint, pip → uv; added dprint (markdown/json/yaml/toml), ruff check (lint), proto formatting via clang-format
-  - Config: `ruff.toml` (Google Python Style, line-length=80), `dprint.json` (80-char wrap)
-  - dprint 2-space list indent accepted (no config for 4-space)
-  - Dockerfile: ruff + dprint as pre-built binaries, uv via `COPY --from=`
-- **BuildBuddy remote cache**: `.bazelrc` `config:remote`, CI writes `ci.bazelrc` (gitignored), `BUILDBUDDY_API_KEY` secret
-- **Codecov**: added `CODECOV_TOKEN` secret for protected branch
-- **PR checks**: devcontainer workflow builds on PRs touching `.devcontainer/**`, docs workflow runs `mkdocs build --strict` on PRs
-- Unpushed commit `e9cca78`: PR checks + naming normalization
-
-## Z3Wire Weave C++ rewrite + infrastructure (session-02)
-
-- **Lint fix**: Z3 moved to source build, updated header paths in `tools/lint.sh`
-- **Codecov removal**: removed coverage CI, `tools/coverage.sh`, `.bazelrc` coverage config, `lcov`/`llvm` packages
-- **Weave Python → C++ rewrite**: ~800 lines Python → ~1200 lines C++ (Abseil + protobuf C++ API), golden tests byte-identical, removed all Python infrastructure
-- **CMake extended for weave**: GoogleTest v1.17.0, Abseil 20260107.1, Protobuf v34.0 from source in Dockerfile; `find_package` over FetchContent; 8 CMake tests (5 core + 3 weave)
-- **Test directory reorg**: `compile_fail_tests/` → `tests/compile_fail/`, `fuzz_tests/` → `tests/fuzz/`
-- **Lint overhaul**: CMake `compile_commands.json` replaces Bazel-based header hunting; weave files now linted; `.clang-tidy` HeaderFilterRegex excludes `.pb.h`
-- **Build config**: `config:remote` → `config:ci`, relative disk cache path
-- vcpkg packaging discussed but deferred
-
-## Explorations (session-00)
-
-- **SMT Arena idea**: differential testing/fuzzing of SMT solvers using synthesized SMT-LIB scripts — existing projects: Yin-Yang, Murxla, StringFuzz; idea shelved for now
-- **Lean 4 for formalization**: explored Lean 4 as tool for formalizing math/physics, self-hosting via C bootstrap, eDSLs in Lean (Sparkle HDL, Lean-SMT, AMO-Lean)
-- **P4 eDSL in Lean**: designed deep-embedded P4 DSL with type-safe headers, strongly-typed state machine parser using parameterized types and total functions — promising direction, paused for later
-- **Formatting tools research**: dprint vs rumdl vs mdformat comparison; dprint chosen for projects; mdformat-mkdocs for MkDocs docs/ folder; pre-commit framework deep dive (Git hooks, isolated toolchains, devcontainer integration)
+Major Z3Wire infrastructure day: rewrote Weave from Python to C++, overhauled formatter/linter stack, added BuildBuddy remote cache, and extended CMake build. Also explored Lean 4 for formalization and designed a P4 eDSL concept.
 
 ## Sessions
 
-- **session-00**: Daily log — SMT Arena brainstorm (shelved), Lean 4 deep dive (self-hosting, eDSLs, P4 DSL design), formatting tools research (dprint chosen, mdformat-mkdocs for docs, pre-commit framework)
-- **session-01**: Z3Wire CI & tooling overhaul — Z3 version pinning, formatter/linter stack replacement, BuildBuddy remote cache, Codecov fix, PR check workflows
-- **session-02**: Z3Wire Weave C++ rewrite, CMake build extension, test reorg, lint overhaul with cmake compile_commands.json, build config cleanup
+- **session-00**: Daily log — SMT Arena brainstorm (differential fuzzing of SMT solvers, shelved), Lean 4 deep dive (self-hosting, eDSLs including Sparkle HDL and Lean-SMT), P4 eDSL design in Lean (deep embedding with type-safe headers and parser state machines), dprint chosen as formatter
+- **session-01**: Z3Wire CI and tooling overhaul — Z3 version pinning (4.15.2), formatter/linter stack replacement (black to ruff, mdformat to dprint, pip to uv), BuildBuddy remote cache, PR check workflows
+- **session-02**: Weave Python to C++ rewrite (~800 to ~1200 lines), Codecov removal, CMake build extended for Weave (find_package over FetchContent), test directory reorg, lint overhaul with cmake compile_commands.json
+
+## Agent index
+
+- DECISION: Weave rewritten from Python to C++ using Abseil + protobuf C++ API; removed all Python infrastructure (rules_python, ruff, uv, pytest) (session-02)
+- DECISION: formatter stack — ruff format (Python), dprint (markdown/json/yaml/toml), clang-format (proto); dprint 2-space list indent accepted (no config for 4-space) (session-01)
+- DECISION: BuildBuddy remote cache replaces disk cache in CI; `config:ci` in `.bazelrc`, `BUILDBUDDY_API_KEY` secret (session-01)
+- DECISION: Codecov removed — overkill for small solo library; `bazel coverage //...` locally when needed (session-02)
+- DECISION: CMake deps via `find_package` over FetchContent (matches devcontainer pattern) (session-02)
+- DECISION: test reorg — `compile_fail_tests/` to `tests/compile_fail/`, `fuzz_tests/` to `tests/fuzz/` (session-02)
+- DECISION: lint.sh made self-contained — runs cmake configure + proto build internally (session-02)
+- IDEA-SHELVED: SMT Arena — differential testing of SMT solvers; similar projects exist (Yin-Yang, Murxla, StringFuzz) (session-00)
+- IDEA-PAUSED: P4 eDSL in Lean 4 — deep embedding, type-safe headers/parsers, code generation; promising direction (session-00)
+- GOTCHA: `--host_cxxopt=-std=c++20` needed in .bazelrc for exec config (genrule tools need C++20) (session-02)
+- GOTCHA: clang-tidy HeaderFilterRegex needs negative lookbehind `(?<!\.pb)\.h$` to exclude generated .pb.h files (session-02)

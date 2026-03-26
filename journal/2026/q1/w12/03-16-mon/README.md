@@ -1,74 +1,22 @@
 # 2026-03-16 (Monday)
 
-## Z3Wire: Weave codegen tool — full design + implementation
-
-- **Weave**: codegen tool generating C++ structs and protobuf messages from RDL (Register Description Language)
-- SoT format: Protobuf `.txtpb` (renamed `.rdl.txtpb`)
-- Schema: Module > Struct > Field, with EnumDef, FieldType, BoolType, BitVecType
-- Three outputs: single `.h` (enum constants + concrete + symbolic structs + inline impl), `.proto` (wire format)
-- Conversion chain: Symbolic <-> Concrete <-> Proto
-- Python codegen: resolver.py (validates, computes widths/offsets, LSB/MSB_FIRST), emit_proto.py, emit_header.py
-- CLI: weave.py with --input and --output_dir
-- Core library changes: default constructors for Bool, BitVec (via std::optional<z3::expr>), Int (zero-init), constexpr Int
-- Key decision: no name transformation in codegen, users write C++ names directly in RDL
-- Key decision: header-only generated code, `reserved` flag on Field (not name-based)
-- Integration test + verification example + golden tests
-- Key files: `z3wire/weave/`, `examples/weave/`, `docs/design/weave.md`
-
-## Z3Wire: Type naming redesign
-
-- Symbolic types get `Sym` prefix: Bool->SymBool, Ubv->SymUInt, Sbv->SymSInt
-- Concrete types get natural C++ names: Bool (new), UInt, SInt
-- Template: BitVec->SymBitVec (symbolic), Int->BitVec (concrete)
-- BitVec over Int: avoids C++ signed-int ambiguity
-- Headers renamed: bool.h->sym_bool.h, bitvec.h->sym_bit_vec.h, int.h->bit_vec.h
-- New concrete Bool: type-safe, deleted integral constructor, explicit operator bool()
-- ~40+ files touched
-- Design doc lifecycle: standalone -> merged into overview.md -> deleted standalone
-
-## Z3Wire: CI improvements
-
-- Bazel --disk_cache + actions/cache for Z3 build caching
-- Migrated all CI to devcontainers/ci@v0.3 (separate steps per invocation)
-- Devcontainer image built/pushed to GHCR on .devcontainer/ changes
-- Added cmake, make, pkg-config, libz3-dev to Dockerfile
-
-## Z3Wire: dev.sh -> devcontainer CLI
-
-- Replaced raw Docker (docker buildx build + docker run) with devcontainer up + devcontainer exec
-- Simplified dev.sh from 32 lines to 8
-- Moved bazel cache volume mount and port forwarding into devcontainer.json
-- Fixed: .bazelignore for build/ and site/, excluded from format/lint, .cache ownership, git safe.directory
-
-## Daily log highlights
-
-- WFH week (Monday)
-- Concept: "structural correctness" in agentic coding — project structure constrains agent updates, components constrain each other (CSP framing)
-
-## Commits
-
-- Weave: full design + implementation session
-- Type naming: 4 squashed commits (f5158a8, 51f29df, c003872, ce8ded5)
-- dev.sh: commit b5a3a0c
-
-## User preferences confirmed
-
-- Auto-commit and push (don't ask before each commit)
-- Cares about readability of generated code
-- Wants syntax highlighting for golden files (.expected.h not .h.golden)
-- file_prefix over deriving filenames from input path
-- YAGNI principle
-- Devcontainer as single dev environment
-
-## Open items
-
-- Weave: Unpack() for symbolic struct from flat bit-vector
-- Weave: Bazel rule integration (replace genrule)
-- Weave: multi-file imports
+Massive Z3Wire day: designed and implemented the Weave codegen tool from scratch, overhauled type naming across 40+ files, modernized CI with devcontainers, and simplified the dev environment. Also coined the "structural correctness" concept for agentic coding.
 
 ## Sessions
 
-- **session-00**: Daily log — WFH Monday, "structural correctness" concept (project structure as CSP for agents)
-- **session-01**: Weave codegen tool — design (brainstorming, schema, naming) + full implementation (RDL proto schema, resolver, emitters, CLI, integration tests, golden tests)
-- **session-02**: Type naming redesign (SymBool/SymUInt/SymSInt + Bool/UInt/SInt, ~40+ files) + CI improvements (devcontainers/ci, Bazel disk cache)
-- **session-03**: Switch dev.sh from raw Docker to devcontainer CLI, verified all dev commands, added .bazelignore
+- **session-00**: Daily log — WFH Monday, brainstormed "structural correctness" concept (project structure as CSP constraining agent updates), discussed custom safe Bool type in C++
+- **session-01**: Weave codegen tool — full design + implementation: RDL proto schema, resolver, proto emitter, header emitter, CLI, integration tests, golden tests
+- **session-02**: Type naming redesign (Sym prefix for symbolic, natural C++ for concrete) across 40+ files, plus CI modernization with devcontainers/ci and Bazel disk cache
+- **session-03**: Switched dev.sh from raw Docker to devcontainer CLI (32 to 8 lines), verified dev commands, added .bazelignore
+
+## Agent index
+
+- DECISION: Weave codegen SoT is Protobuf `.rdl.txtpb`, Python codegen, three outputs: `.h` (4-section layout), `.proto`; no name transformation in RDL — users write C++ names directly (session-01)
+- DECISION: `std::optional<z3::expr>` for Bool/BitVec storage — tradeoff: loses compile-time non-null, enables default construction for generated structs (session-01)
+- DECISION: type naming — `Sym` prefix for symbolic (SymBool, SymUInt, SymSInt), natural C++ for concrete (Bool, UInt, SInt); `BitVec` over `Int` for template (avoids signed ambiguity) (session-02)
+- DECISION: concrete Bool — deleted integral constructor, `explicit operator bool()`, type-safe (session-02)
+- DECISION: design doc lifecycle — standalone spec -> merged into overview.md -> deleted standalone (session-02)
+- DECISION: devcontainer as single dev environment, dev.sh uses devcontainer CLI (session-03)
+- CONCEPT: "structural correctness" — architecture as CSP for agents, components constrain each other, compiler-driven agent alignment (session-00)
+- PREF: auto-commit+push without asking; readability of generated code; `.expected.h` for golden files; `file_prefix` over path derivation; YAGNI (session-01)
+- OPEN: Weave — Unpack(), Bazel rule integration, multi-file imports (session-01)

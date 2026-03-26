@@ -1,33 +1,23 @@
-# 2026-03-10 (Tue)
+# 2026-03-10 (Tuesday)
+
+Deep Z3Wire development day: implemented `bitfield_eq`, fixed mdformat, audited naming conventions, and polished the project. Wide-ranging daily log covering hardware design reading, Amaranth HDL, and static site generator research.
 
 ## Sessions
 
-### session-00: Daily log (Gemini)
-- Late night coding on z3wire the night before — flow state
-- Gemini reviewed z3wire repo, gave feedback: C++20 concepts, ergonomic slicing, benchmarking, Yosys integration
-- Recorded **HashMath** (Samuel Schlesinger): content-addressed Calculus of Inductive Constructions, SHA-256 hashed proofs, Lean 4 + Rust P2P sidecar
-- Recorded **AutoCLRS** (MSR RiSE): AI agents (Claude Opus 4.6) formalized ~50 CLRS algorithms in F*/Pulse, 100k+ LOC, specification review is the new bottleneck
-- Recorded **"Designing AI Chip Hardware and Software"** by Bjarke Hammersholt Roune (ex-TPUv3 software lead): AI CPU thesis, systolic arrays, memory wall strategies, software pipelining
-- Discussed **Amaranth** HDL (Python): first-class formal verification, elaboration-time shape checking vs C++ compile-time
-- **C++ vs Python tradeoff for hardware verification**: C++ gives compile-time safety but hard to build Python bindings for templated code; Python gives ergonomics but delays error detection to elaboration
-- Researched static site generators: MkDocs Material, Hugo, Zola, Astro
-- Bay Area commute frustration — left work early but traffic negated time savings
-- Discussed combinational logic: ITE is the fundamental routing primitive; multi-way MUX reduces to cascaded ITE
+- **session-00**: Daily log (Gemini) -- Z3Wire feedback from Gemini, recorded HashMath/AutoCLRS/AI chip design talks, Amaranth HDL discussion, C++ vs Python for hardware verification, combinational logic deep dive (ITE as fundamental routing primitive), static site generator research, Bay Area commute frustration
+- **session-01**: Z3Wire -- `bitfield_eq` feature (LSB-first, auto type conversions, static_assert on width sum), mdformat-mkdocs fix, naming convention audit (keep snake_case), LICENSE update, AGENTS.md refinements, plan file cleanup (16 commits)
 
-### session-01: Z3Wire docs reorg, bitfield_eq, project polish (Claude)
-- **bitfield_eq feature**: `z3w::Bool bitfield_eq(buffer, fields...)`, LSB-first ordering, auto type conversions, static_assert on width sum
-- mdformat-mkdocs fix (not mdformat-admon — they conflict)
-- Naming convention audit: keep snake_case (matches Z3 C++ API), documented deviations
-- LICENSE: changed to "The Z3Wire Authors"
-- AGENTS.md refinements: project name, docs, test co-location, lint guidelines
-- Plan file cleanup: moved out of docs/, then deleted after completion
+## Agent index
 
-## Key facts
-- z3wire project: `~/i/z3wire`
-- LSB-first is dominant modern convention for bitfield layout (Amaranth, Chisel, FIRRTL)
-- mdformat-mkdocs is the correct plugin (not mdformat-admon)
-
-## Sessions
-
-- **session-00** (Gemini): Daily log — z3wire feedback, hardware design reading (HashMath, AutoCLRS, AI chip doc), Amaranth discussion, combinational logic deep dive, static site generator research
-- **session-01** (Claude): Z3Wire development — bitfield_eq implementation, mdformat fix, naming audit, project polish (16 commits)
+- bitfield_eq API: `z3w::Bool bitfield_eq(buffer, fields...)`, LSB-first ordering (Amaranth, Chisel, FIRRTL convention), auto Bool->to_ubv1/Sbv->cast<Ubv> conversions, static_assert on width sum (session-01)
+- mdformat-mkdocs is the correct plugin for mkdocs admonitions, NOT mdformat-admon -- they conflict; must not install both (session-01)
+- naming audit: keep snake_case (matches Z3 C++ API users call alongside Z3Wire); type traits keep STL convention (`is_symbolic`); deviations documented in AGENTS.md (session-01)
+- LICENSE: "Copyright (c) 2026 The Z3Wire Authors" -- follows Go pattern, no annual year updates needed (session-01)
+- no SMT solver provides struct/bitfield abstraction -- novel for Z3Wire (session-01)
+- don't place non-doc files in `docs/` -- mkdocs strict mode fails; plan files moved out then deleted (session-01)
+- Docker cache: `docker buildx build --no-cache` when Dockerfile changes cause snapshot errors (session-01)
+- HashMath: content-addressed Calculus of Inductive Constructions, SHA-256 hashed proofs, Lean 4 + Rust P2P (session-00)
+- AutoCLRS: Claude Opus 4.6 agents formalized ~50 CLRS algorithms in F*/Pulse, 100k+ LOC (session-00)
+- C++ vs Python tradeoff: C++ gives compile-time safety but hard Python bindings for templates; Python gives ergonomics but delays errors to elaboration (session-00)
+- ITE is the fundamental routing primitive; multi-way MUX reduces to cascaded ITE (session-00)
+- static site generators evaluated: MkDocs Material, Hugo, Zola, Astro (session-00)

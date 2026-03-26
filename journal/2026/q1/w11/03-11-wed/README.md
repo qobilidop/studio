@@ -1,35 +1,19 @@
-# 2026-03-11 (Wed)
+# 2026-03-11 (Wednesday)
+
+Tired day with limited energy. Z3Wire feature work continued: ergonomics brainstorm, competitive analysis confirming Z3Wire's uniqueness, unary negate and single-bit extraction implementations.
 
 ## Sessions
 
-### session-00: Daily log (Gemini)
-- Very tired recently, went to sleep late (2 AM), took evening nap
-- Lesson: provide the right context to agents → they figure it out, often better than what human comes up with
-- Team dinner at Gochi Japanese Fusion Tapas
+- **session-00**: Daily log (Gemini) -- very tired, went to sleep at 2 AM, insight about providing context to agents, team dinner at Gochi Japanese Fusion Tapas, evening nap
+- **session-01**: Z3Wire -- ergonomics brainstorm (4 pain points identified, deferred YAGNI), competitive analysis (~12 projects, Z3Wire unique in compile-time width checking), unary negate with bit-growth, single-bit extraction `bit<N>()`, combinational logic framing doc, SInt::value() discussion deferred
 
-### session-01: Z3Wire feature work + API design (Claude)
-- Ergonomics brainstorm: identified 4 pain points (.raw() noise, literal verbosity, scoped solver checks, struct construction); deferred helpers (YAGNI)
-- Competitive analysis: ~12 projects surveyed; Z3Wire is unique in compile-time width checking (no other project does this, not even Rust's z3.rs)
-- Unary negate: bit-growth (width+1, always signed), `-ext` for symbolic, `~x+1` for concrete
-- Single-bit extraction: `bit<N>(val)` delegates to `extract<N,N>(val)`
-- Combinational logic framing doc: primitives table in design overview, Bool XOR identified as gap
-- SInt::value() returns unsigned — needs `signed_value()` accessor (deferred)
+## Agent index
 
-## Key decisions
-- Bit-growth for unary negate (consistency with binary subtraction)
-- Reduction operators deferred (expressible via comparisons)
-- Bool XOR deferred (expressible as `!=`)
-- No global Z3 context (thread safety), no solver/context wrapping
-
-## Lessons
-- Provide the right context to agents — they can figure things out, often better than manual attempts
-
-## Open items
-- `SInt::signed_value()` accessor
-- Bool XOR (`^`) operator
-- Reduction operators, `Ubv<1>`/`Bool` friction (when use case arises)
-
-## Sessions
-
-- **session-00** (Gemini): Daily log — tired recently, team dinner at Gochi Japanese Fusion Tapas, insight about providing context to agents
-- **session-01** (Claude): Z3Wire — ergonomics brainstorm, competitive analysis (~12 projects), unary negate + bit extraction implementation, combinational logic framing doc
+- Z3Wire competitive analysis: surveyed ~12 projects (z3++.h, cpp-smt-wrapper, Smt-Switch, metaSMT, Bitwuzla, cvc5, z3.rs, Z3Py, isla-lib, STP, Pono, Boolector) -- Z3Wire unique in compile-time width checking, not even Rust z3.rs does this (session-01)
+- ergonomic pain points: `.raw()` noise, literal verbosity, scoped solver checks, struct construction -- all deferred YAGNI (session-01)
+- unary negate: bit-growth (width+1, always signed), consistent with binary subtraction; symbolic uses `-ext`, concrete uses `~x+1` with masking (session-01)
+- single-bit extraction: `bit<N>(val)` trivially delegates to `extract<N,N>(val)` (session-01)
+- Bool XOR identified as gap (expressible as `!=`), reduction operators deferred (expressible via comparisons) (session-01)
+- SInt::value() returns unsigned 0xFF not -1 -- leaky abstraction; needs `signed_value()` returning int64_t; deferred (session-01)
+- no global Z3 context (thread safety), no solver/context wrapping (session-01)
+- lesson: provide the right context to agents -- they figure it out, often better than manual attempts (session-00)
