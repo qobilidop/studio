@@ -1,18 +1,18 @@
 ---
 name: sync-journal
-description: Use when asked to sync journal, or after updating session files — re-reads today's and yesterday's session files and updates all README.md summary files up the chain
+description: Use when asked to sync journal, or after updating session files - re-reads the past 3 days of session files and updates all README.md summary files up the chain
 allowed-tools: Read, Write, Edit, Bash, Glob
 ---
 
-Sync journal summaries for today and yesterday by re-reading all session files and updating README.md files up the chain.
+Sync journal summaries for the past 3 days (today, yesterday, day before yesterday) by re-reading all session files and updating README.md files up the chain.
 
 ## Steps
 
-1. **Determine target days**: Using today's date and yesterday's date, derive both day directory paths:
+1. **Determine target days**: Using today's date, derive day directory paths for today, yesterday, and the day before yesterday:
    - Format: `~/i/cyborg/journal/{year}/q{quarter}/w{week}/{MM-DD-dow}/`
    - Week number uses ISO 8601 (Monday-start weeks)
    - Day-of-week is lowercase 3-letter abbreviation (mon, tue, wed, thu, fri, sat, sun)
-   - Note: today and yesterday may fall in different weeks, quarters, or even years
+   - Note: the 3 days may span different weeks, quarters, or even years
 
 2. **For each day directory that exists**, read ALL `session-*.md` files in it.
 
@@ -45,4 +45,4 @@ Sync journal summaries for today and yesterday by re-reading all session files a
 - Follow the conventions in `~/i/cyborg/journal/AGENTS.md`.
 - Do NOT modify session files.
 - Skip any day directory that doesn't exist (no error).
-- When today and yesterday span different weeks/quarters/years, propagate up both chains.
+- When the 3 days span different weeks/quarters/years, propagate up all affected chains.
