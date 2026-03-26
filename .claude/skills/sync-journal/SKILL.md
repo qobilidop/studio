@@ -16,18 +16,29 @@ Sync journal summaries for today and yesterday by re-reading all session files a
 
 2. **For each day directory that exists**, read ALL `session-*.md` files in it.
 
-3. **Update day-level README.md** for each day:
-   - Title: `# {YYYY-MM-DD} ({DayOfWeek})`
-   - Include: key decisions, facts, technical details organized by topic
-   - End with a `## Sessions` section listing each session with a one-line description
+3. **Update README.md at each level** (day, week, quarter, year) with the same three-section structure:
 
-4. **Propagate up the chain** — update README.md at each ancestor level:
-   - **Week** (`w{NN}/`): Title `# {year} W{NN} ({month} {start}–{end})`. Highlights, then detailed per-day summaries.
-   - **Quarter** (`q{N}/`): Title `# {year} Q{N}`. List weeks with one-line descriptions.
-   - **Year** (`{year}/`): Title `# {year}`. List quarters with one-line descriptions.
-   - When updating, read the existing file first, then preserve content from other children and update only the relevant entries.
+   **Overview** (no heading, right after title):
+   - 1-3 sentence glanceable summary
+   - Title formats: `# {YYYY-MM-DD} ({DayOfWeek})`, `# {year} W{NN} ({month} {start}–{end})`, `# {year} Q{N}`, `# {year}`
 
-5. **Report** which days were synced and a brief confirmation.
+   **Children section** (human-readable):
+   - One-line description per child with link
+   - Section name matches child type: `## Sessions` (day), `## Days` (week), `## Weeks` (quarter), `## Quarters` (year)
+   - Day-level format: `- **session-NN**: {description}`
+   - Other levels format: `- [{child}]({child}/README.md): {one-line summary}`
+
+   **`## Agent index`** (agent-optimized):
+   - Optimized for your own future consumption — help yourself find things fast
+   - Include: decisions with rationale, blockers, lessons, cross-references
+   - Terse and keyword-heavy — no need to be human-readable
+   - At day level, tag entries by source session
+   - At higher levels, capture cross-child patterns and open items
+   - Only include things that don't fit naturally into the children descriptions
+
+   When updating, read the existing file first, then preserve content from other children and update only the relevant entries.
+
+4. **Report** which days were synced and a brief confirmation.
 
 ## Rules
 

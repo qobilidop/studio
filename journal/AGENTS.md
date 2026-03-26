@@ -18,13 +18,13 @@ Context from the past.
   - `session-NN.md`: Raw **session files**. Leaf node only.
      - `session-00.md` is always my daily log, a background chat I keep throughout the day.
      - Other session files are more focused work sessions.
-  - `README.md`: Directory-level summary. Key decisions, technical details, and per-child summaries.
+  - `README.md`: Directory-level summary.
 
-### What to cover in `README.md`?
+### `README.md` structure (all levels)
 
-- Key decisions, facts, technical details organized by topic.
-- Per-child summaries.
-- At day level: end with a Sessions section listing each session.
+1. **Overview** (no heading, after title): 1-3 sentence glanceable summary.
+2. **Children**: one-line description per child with link. Section name matches child type — Sessions (day), Days (week), Weeks (quarter), Quarters (year).
+3. **Agent index**: agent-optimized lookup at that scope — decisions with rationale, blockers, lessons, cross-references. Terse and keyword-heavy. At day level, tag entries by source session.
 
 ## Rules
 
