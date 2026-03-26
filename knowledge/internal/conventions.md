@@ -12,10 +12,10 @@ Our established conventions, distilled from experience.
 ## Repo structure
 
 - **Create when content demands** — no empty directories or placeholder files for hypothetical future use. A directory earns its existence when there's real content to put in it.
-- Top-level structure: `memory/`, `knowledge/`, `.claude/skills/`, `tools/`. Additional directories (e.g., `projects/`) deferred until needed.
+- Top-level structure: `journal/`, `knowledge/`, `.claude/skills/`, `tools/`. Additional directories (e.g., `projects/`) deferred until needed.
 - Separate repos for separate projects (e.g., Z3Wire is its own repo, not a subdirectory).
 
-## Memory
+## Journal
 
 - Organized by date: `year/quarter/week/MM-DD-dow/`.
 - `README.md` at each level summarizes the contents beneath it.

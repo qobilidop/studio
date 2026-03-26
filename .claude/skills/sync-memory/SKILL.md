@@ -9,7 +9,7 @@ Sync memory summaries for today and yesterday by re-reading all session files an
 ## Steps
 
 1. **Determine target days**: Using today's date and yesterday's date, derive both day directory paths:
-   - Format: `~/i/cyborg/memory/{year}/q{quarter}/w{week}/{MM-DD-dow}/`
+   - Format: `~/i/cyborg/journal/{year}/q{quarter}/w{week}/{MM-DD-dow}/`
    - Week number uses ISO 8601 (Monday-start weeks)
    - Day-of-week is lowercase 3-letter abbreviation (mon, tue, wed, thu, fri, sat, sun)
    - Note: today and yesterday may fall in different weeks, quarters, or even years
@@ -30,7 +30,7 @@ Sync memory summaries for today and yesterday by re-reading all session files an
 
 ## Rules
 
-- Follow the conventions in `~/i/cyborg/memory/AGENTS.md`.
+- Follow the conventions in `~/i/cyborg/journal/AGENTS.md`.
 - Do NOT modify session files.
 - Skip any day directory that doesn't exist (no error).
 - When today and yesterday span different weeks/quarters/years, propagate up both chains.

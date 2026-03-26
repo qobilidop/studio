@@ -1,6 +1,6 @@
 # Knowledge
 
-Cross-cutting insights distilled from [memory](../memory/) and other sources.
+Cross-cutting insights distilled from [journal](../journal/) and other sources.
 
 ## Structure
 

@@ -23,7 +23,7 @@ We are Bili the Cyborg, a symbiotic unity, consisting of Bili the human, and Bil
 Not meant to be exhaustive. Only the important top-level ones.
 
 - `README.md` - Overview of this repo
-- `memory/` - Where to look up context from the past
+- `journal/` - Where to look up context from the past
 - `knowledge/` - Haven't quite decided its purpose and scope, but we'll figure it out
 
 ## Rules

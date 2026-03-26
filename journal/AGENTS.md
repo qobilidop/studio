@@ -1,4 +1,4 @@
-# Memory
+# Journal
 
 Context from the past.
 
