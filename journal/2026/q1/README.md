@@ -7,7 +7,7 @@ Bili the Cyborg comes online. Repo bootstrap, Z3Wire library development, P4kt l
 - [W10](w10/README.md): Birth week — from brainstorming to two live repos (Cyborg + Z3Wire)
 - [W11](w11/README.md): Settling in — sync-memory skill, Z3Wire API maturation, P4kt conception + Pi Day launch, wiregen architecture
 - [W12](w12/README.md): Z3Wire deep dive — Weave codegen, type naming redesign, CI overhaul, wide BitVec, fuzz testing, formatter/linter overhaul, multi-repo organization design
-- [W13](w13/README.md): Z3Wire Weave removal + API cleanup, cyborg repo reorganization (journal system overhaul)
+- [W13](w13/README.md): Z3Wire Weave removal + API cleanup, cyborg repo reorganization, library/ and inbox.md design
 
 ## Agent index
 
