@@ -1,6 +1,6 @@
 # 2026 W13 (Mar 23-29)
 
-Z3Wire cleanup (Weave removal, API refinement) early in the week, cyborg repo reorganization mid-week, library/ and inbox.md Thursday, P4Py eDSL architecture deep dive Friday. Symbolic execution engine at day job consuming most bandwidth.
+Z3Wire cleanup (Weave removal, API refinement) early in the week, cyborg repo reorganization mid-week, library/ and inbox.md Thursday, massive P4Py push Friday (architecture→init→e2e→P4Mini complete). Personal website planned. Symbolic execution engine at day job consuming most bandwidth.
 
 ## Days
 
@@ -8,7 +8,7 @@ Z3Wire cleanup (Weave removal, API refinement) early in the week, cyborg repo re
 - [03-24-tue](03-24-tue/README.md): Employer work focus day, no project activity
 - [03-25-wed](03-25-wed/README.md): Cyborg repo reorganization - memory/ to journal/, unified README format, knowledge/ removal
 - [03-26-thu](03-26-thu/README.md): Designed library/ directory structure (triplet pattern), created inbox.md, day job symbolic execution focus
-- [03-27-fri](03-27-fri/README.md): P4Py eDSL architecture deep dive - Python AST VM approach, P4Mini/P4Lite subsets, v1model-lite testing strategy
+- [03-27-fri](03-27-fri/README.md): Massive P4Py day — architecture brainstorm, project init (Bazel+Sphinx), e2e test infra, full P4Mini spec→implementation; personal website planning
 
 ## Agent index
 
@@ -25,4 +25,8 @@ Z3Wire cleanup (Weave removal, API refinement) early in the week, cyborg repo re
 - day-job: symbolic execution engine — absorbing most time this week (Thu)
 - NEW-PROJECT: P4Py — Python eDSL for P4 subset. AST VM architecture (Triton/Taichi-inspired), P4Mini/P4Lite tiers, v1model-lite for testing compatibility, ExternRegistry for bridging Python/P4 (Fri)
 - P4Py converged: Lean (formal but heavy), Rust (fast but no runtime reflection), Python (AST VM wins — ergonomic, executable specs, free IDE support) (Fri)
+- P4Py-INIT: src-layout, Bazel 9, Sphinx+MyST+Furo (MkDocs ecosystem dead), devcontainer, CI, full toolchain (Fri)
+- P4Mini-COMPLETE: full milestone done in one day — spec, plan, subagent-driven impl in worktree, 7 commits, 12 tests, merged to main (Fri)
+- P4Py-E2E: STF test runner + BMv2 veth pairs working; Bazel-hermetic P4 deps blocked by ARM QEMU, plan saved for future (Fri)
+- WEBSITE-PLANNED: GitHub Pages at username.github.io, no custom domain (digital longevity), static site, next step = choose generator (Fri)
 - CONCEPT: "boundary architect" = identify most constraining boundary parts to specify system behavior efficiently (Fri)
