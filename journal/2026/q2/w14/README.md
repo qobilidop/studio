@@ -1,6 +1,6 @@
 # 2026 W14 (Mar 30 - Apr 5)
 
-Week opens with SMT solver exploration and Zig investigation, then launches sail-xisa project (20→42 Parser instructions + full binary encoding + MAP ISA foundation), builds personal website, creates browser-based XISA playground, and culminates in a massive multi-project Saturday (sail-xisa refactor + proptest + diff testing + bug fixes, Z3Wire multiplication, P4Py routing completion, agentic workflow design).
+Week opens with SMT solver exploration and Zig investigation, then launches sail-xisa project (20→42 Parser instructions + full binary encoding + MAP ISA foundation), builds personal website, creates browser-based XISA playground, hits a massive multi-project Saturday (sail-xisa refactor + proptest + diff testing + bug fixes, Z3Wire multiplication, P4Py routing completion, agentic workflow design), and closes Sunday with Z3Wire documentation polish (design decision records, gate-level examples, docs reorg).
 
 ## Days
 
@@ -10,6 +10,7 @@ Week opens with SMT solver exploration and Zig investigation, then launches sail
 - [04-02-thu](04-02-thu/README.md): XISA Web Playground (Rust/WASM + Astro/Svelte) + polish (/spec page with WaveDrom diagrams, GitHub Pages fix, CI refactor, naming cleanup), rclone research, Z3 SMT encoding strategies
 - [04-03-fri](04-03-fri/README.md): Rest day — went to work, evening recovery
 - [04-04-sat](04-04-sat/README.md): Multi-project sprint — sail-xisa (Cargo workspace refactor, proptest, diff testing, bit-endianness bug cascade fix, 116 tests), Z3Wire (multiplication op + docs/dev refactor), P4Py (Slice 5 routing + refinement, tor.p4 complete), agentic workflow deep dive (repo doc standards, v0.1.0 transition protocol)
+- [04-05-sun](04-05-sun/README.md): Z3Wire documentation day — docs/dev reorganization, 6 design decision records, 3 gate-level examples (adder, barrel shifter, multiplier), literal API exploration (rejected), Gemini Q&A (Mojo eDSLs, MkDocs 2.0)
 
 ## Agent index
 
@@ -32,7 +33,10 @@ Week opens with SMT solver exploration and Zig investigation, then launches sail
 - CI-REFACTOR: web.yml uses dev container image now (was installing from scratch), merged tools/→scripts/ (Thu)
 - NAMING: execute→pexecute (24 files), P/M prefix convention (parser=P, MAP=M) — Sail has no namespaces (Thu)
 - Z3WIRE-MUL: SymBitVec operator*, W1+W2 bit growth, signed-if-either-signed, bvmul sign-agnostic (signedness via extension), TDD, worktree (Sat)
-- Z3WIRE-DOCS: split guide.md → 8 focused files in docs/dev/, removed docs/design/, north_star.md refined to 19-line boundary doc, README rewritten with "combinational logic verification" tagline + Z3 comparison example (Sat)
+- Z3WIRE-DOCS: split guide.md → 8 focused files in docs/dev/ (Sat), then reorganized again Sun (principles → workflow.md, scratch → .agent_workspace/, section index via navigation.indexes). north_star.md refined to 19-line boundary doc, README rewritten with "combinational logic verification" tagline + Z3 comparison example (Sat)
+- Z3WIRE-DESIGN-DOCS: 6 design decision records in docs/design/ ordered by dependency: concrete-types → bool-vs-uint1 → lossless-auto-promotion → three-tier-casting → mathematical-comparison → bit-growth-arithmetic. docs/design/ removed Sat, recovered Sun (Sun)
+- Z3WIRE-EXAMPLES: gate-level trio (adder, barrel_shifter, multiplier) proving equivalence to Z3Wire ops via solver. Replaced safe_adder.cc, removed alu.cc + bit_manipulation.cc (Sun)
+- LITERAL-API: explored multiple shorthand APIs, all rejected. UInt<W>::Literal<V>() verbose but unambiguous. Concrete literals + mixed-operand auto-promotion already solves verbosity (Sun)
 - P4PY-TOR-COMPLETE: Slice 5 routing (7 new features) + refinement pass (p4.var, @p4runtime_translation, @name). 59 tests, tor.p4 fully translated. p4testgen blocked by p4c version (Sat)
 - AGENTIC-WORKFLOW: docs/dev/{north_star,arch,todo,rules}.md, AGENTS.md as single control file (not llms.txt — website standard, not repo). justfile inside dev container. v0.1.0 = transition direct-to-main→PR workflow. design.md with rejected alternatives (Chesterton's Fence). 3-project parallel with strict 1:1 agent:project mapping. Dropped Z3Wire Weave (Sat)
 - IR-DESIGN: language-agnostic IR hourglass model — protobuf/FlatBuffers, MLIR/CIRCT, BMv2 JSON, SMT-LIB/Btor2, WASM (Sat)
@@ -40,4 +44,6 @@ Week opens with SMT solver exploration and Zig investigation, then launches sail
 - RCLONE: MIT Go CLI, gold standard multi-cloud sync, union remote, aggressive retry+checksum (Thu)
 - SAIL-GOTCHAS: loop bounds need assert helpers, `val` reserved, bits4 needs prelude, encdec bit-width errors only in `sail -c`, `unsigned()` for comparison (Wed)
 - LEGAL: XISA spec is MPLv2 (white paper p2), project code Apache 2.0, ISA-derived docs need MPLv2 notice (Thu)
-- THEME: Mon = theory, Tue = bootstrap, Wed = build sprint, Thu = playground + polish, Fri = rest, Sat = multi-project blitz + workflow design
+- MOJO-EDSLS: MAX Graph API, Juju, Triton replacements. MLIR foundation, compile-time metaprogramming for type-level DSLs (Sun)
+- MKDOCS-FUTURE: MkDocs 2.0 breaking changes, Material maintenance mode, Zensical as successor (Sun)
+- THEME: Mon = theory, Tue = bootstrap, Wed = build sprint, Thu = playground + polish, Fri = rest, Sat = multi-project blitz + workflow design, Sun = Z3Wire docs + examples polish
