@@ -1,0 +1,19 @@
+# 2026-04-07 (Tuesday)
+
+Deep Gemini exploration of packet parsing ecosystem (P4-to-eBPF compilation, ternary/TCAM limitations, DPDK/VPP/OVS parsers, serde), brainstorming a P4-subset IDL and then an "LLVM IR of packet parsing" (MLIR dialect vs Rust IR, source-to-source transpilation), plus sail-xisa MAP ISA batch implementation (19 new instructions, opcodes 44-57) and differential fuzz testing with CP instructions (opcodes 58-62).
+
+## Sessions
+
+- **session-00**: Daily log — Gemini Q&A: P4-to-eBPF compilation (P4Runtime via user-space agent, ternary/range match limitations in eBPF maps), low-level ISAs and TCAMs (NPU coprocessor dispatch, RMT pipeline, RISC-V custom extensions), serde ecosystem, IDLs for bit fields (Kaitai Struct, SystemRDL, Spicy, P4-as-IDL), brainstorming P4-subset IDL tool (validators, SMT constraints, fuzzing, symmetrical serialization), eBPF/DPDK/VPP/Click/OVS packet parsers, designing a "Packet Parsing IR" (MLIR dialect + Rust dual-IR strategy vs pure Rust transpilation, p4c-ebpf/BCC/Kaitai as precedents)
+- **session-01**: sail-xisa — MAP ISA batch: 19 new instructions (opcodes 44-57). PMEM struct mgmt (MSTALLOC/MSTRGET/SET/CUR), MLDID, MLDRTC, LFLAG subsystem (8x2-bit flags), MSYNC/SYNCALL, MWAIT, MDROP, MBW (5 bitwise ops), MHASH with stub XOR-fold. Research: sail-riscv/sail-arm subsystem patterns. MAP ISA: 44→63 variants, 49→53 tests
+- **session-02**: sail-xisa — Differential fuzz testing (proptest, 7 bugs found/fixed: shift overflows, extract/insert_bits clamping, out-of-bounds behavior alignment). CP instructions (opcodes 58-62): MCPR/MCP/MCPI/MCPS/MCPIS. Spec review of remaining MAP instructions. 54 Sail tests, 117+ Rust tests, 68 instruction variants across opcodes 0-62
+
+## Agent index
+
+- PACKET-PARSING-IR: brainstormed "LLVM IR of packet parsing" — architecture-agnostic IR with cursor mgmt, bit extraction, assertions, transitions. Dual-IR strategy (MLIR dialect for hardware targets, Rust IR for analysis/interpreter) considered but concluded: pure Rust source-to-source transpilation likely better for eBPF/DPDK (p4c-ebpf, BCC, Kaitai all do this). Key: Clang already handles optimization, MLIR adds massive dependency for little gain in this domain (s00)
+- P4-SUBSET-IDL: idea to use P4 type subset (bit, struct, header) as IDL for generating cross-language binary parsers + validators + SMT constraints. Extensions: endianness annotations, fuzzing/test payload generation, symmetrical serialization (builders). Implement from scratch (simple grammar, no need for full p4c) (s00)
+- EBPF-P4RUNTIME: P4Runtime bridged via user-space control plane agent translating gRPC to bpf() syscalls for map updates. Packet-in via PERF_EVENT_ARRAY/RINGBUF, packet-out via raw socket/TAP (s00)
+- EBPF-TABLE-LIMITS: exact→HASH, lpm→LPM_TRIE work natively. Ternary needs Tuple Space Search (max ~128 masks before verifier rejects). Range unsupported (must expand to exact/LPM entries). 512-byte stack limit, fixed map sizes, spinlock restrictions with direct meters (s00)
+- SAIL-XISA-MAP-EXPANSION: opcodes 44-62 implemented across s01+s02. LFLAG subsystem (complete+result flags) for async operations. PMEM struct ops, hardware ID, RTC, bitwise, hash, copy-to-packet. Studied sail-riscv (extern C for softfloat, callback hooks) and sail-arm (stub UNKNOWN, swappable device files) for subsystem modeling patterns (s01)
+- DIFF-FUZZ-TESTING: proptest-based single-instruction fuzzer comparing Rust vs Sail simulators. 7 bugs found: shift overflows (N-flag, CnctBy/Bi, STC), extract/insert_bits bounds (Rust rejected, Sail overflowed), extract_packet_bits silent zero vs Sail assert, Sth/Stch/Sthc silent ignore vs Sail assert. Sail type checker can't prove min(a,b)>=0 — workaround: separate if-else with assert (s02)
+- SAIL-GOTCHAS-NEW: get_slice_int for division, tmod_int for mod, sail_mask for narrowing hex literals, bits(7) needs 0b not 0x, enums before scattered union, no & after match expression (s01)
