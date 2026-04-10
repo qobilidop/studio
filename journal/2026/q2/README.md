@@ -1,11 +1,11 @@
 # 2026 Q2
 
-Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playground, then Cargo workspace refactor + proptest + diff testing + bug fixes). Z3Wire gains multiplication, gets a major docs/dev refactor, adds 6 design decision records and gate-level examples. P4Py tor.p4 translation completed. Personal website launched. Deep exploration of agentic dev workflow standards. W15 pushes sail-xisa MAP ISA to 68 variants (opcodes 0-62) with differential fuzz testing, adopts Zensical, and explores packet parsing IR design and Rust+MLIR/BPF ecosystem.
+Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playground, then Cargo workspace refactor + proptest + diff testing + bug fixes). Z3Wire gains multiplication, gets a major docs/dev refactor, adds 6 design decision records, gate-level examples, and branding (`<W>` logo). P4Py tor.p4 translation completed. Personal website launched and migrated to monorepo. Repo renamed cyborg→studio. Deep exploration of agentic dev workflow standards, theorem provers (Lean/Rocq), Racket LOP, and packet parsing IR design.
 
 ## Weeks
 
 - [W14](w14/README.md): SMT/Zig exploration, sail-xisa from bootstrap to full Parser ISA + MAP ISA + web playground + refactor + diff testing (116 Rust tests), Z3Wire (multiplication + docs/dev refactor + 6 design records + gate-level examples), P4Py tor.p4 complete (59 tests), personal website, agentic workflow design (repo doc standards, v0.1.0 protocol)
-- [W15](w15/README.md): Zensical adoption + Z3Wire tooling migration, sail-xisa docs restructuring + MAP ISA push (opcodes 26-62, diff fuzz testing, 7 bugs fixed), packet parsing IR design, Rust+MLIR/BPF/P4 backend exploration
+- [W15](w15/README.md): Zensical adoption + Z3Wire tooling/branding migration, sail-xisa docs restructuring + MAP ISA push (opcodes 26-62, diff fuzz testing, 7 bugs fixed), packet parsing IR design, Rust+MLIR/BPF exploration, theorem prover survey (Lean/Rocq/F*), Racket LOP deep dive, repo rename cyborg→studio, website migration to monorepo
 
 ## Agent index
 
@@ -22,3 +22,5 @@ Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playg
 - BPF-MLIR: no upstream BPF dialect, P4MLIR proposal, p4c backends for eBPF/DPDK/uBPF (W15)
 - ZENSICAL: Rust core + Python extensibility, reads mkdocs.yml natively, differential builds. Best Markdown-based doc solution for docs-as-code workflows (W15)
 - PACKET-PARSING-IR: brainstormed P4-subset IDL and "LLVM IR of packet parsing". Concluded: pure Rust source-to-source transpilation likely best for eBPF/DPDK (p4c-ebpf, BCC, Kaitai precedents). Dual MLIR+Rust IR considered but MLIR overhead not justified for this domain (W15)
+- THEOREM-PROVERS: survey of Lean 4, Rocq, Isabelle/HOL, Dafny, F*. User wants to learn Lean + Rocq. Lean 4 deep dive: opaque/mutual/typeclasses, StateM + FBIP. Identity: "machine building assistant, human learning practitioner" (W15)
+- REPO-RENAME: cyborg→studio (studio/study pair from Latin studium). Website migrated to monorepo with CI deploy. Racket LOP deep dive (Reader→Expander, source-to-source via Rosette). Z3Wire branding (`<W>` logo, zensical.toml migration) (W15)

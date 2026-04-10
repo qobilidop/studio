@@ -1,11 +1,13 @@
 # 2026 W15 (Apr 6–12)
 
-Zensical adoption and Z3Wire tooling migration, sail-xisa docs restructuring then massive MAP ISA push (opcodes 26-62, differential fuzz testing, 7 bugs fixed), deep Gemini exploration of Rust+MLIR, BPF/eBPF ecosystem, packet parsing architectures, and brainstorming a P4-subset IDL / Packet Parsing IR.
+Zensical adoption and Z3Wire tooling migration, sail-xisa docs restructuring then massive MAP ISA push (opcodes 26-62, differential fuzz testing, 7 bugs fixed), deep Gemini exploration of Rust+MLIR, BPF/eBPF ecosystem, packet parsing architectures, P4-subset IDL / Packet Parsing IR brainstorm, theorem prover survey (Lean/Rocq/F*), repo rename cyborg→studio, Racket LOP deep dive, and Z3Wire branding.
 
 ## Days
 
 - [04-06-mon](04-06-mon/README.md): Zensical deep dive + Z3Wire tooling migration (MkDocs Material to Zensical, pip to uv), sail-xisa docs restructuring (Starlight reverted, spec/plan cleanup), MAP ISA expansion (opcodes 26-43, all self-contained done), Rust+MLIR/BPF/P4 backend exploration
 - [04-07-tue](04-07-tue/README.md): Packet parsing ecosystem deep dive (P4-to-eBPF, TCAM limits, DPDK/VPP/OVS, P4-subset IDL brainstorm, Packet Parsing IR design), sail-xisa MAP ISA batch (opcodes 44-62, LFLAG subsystem, diff fuzz testing, 7 bugs fixed, CP instructions)
+- [04-08-wed](04-08-wed/README.md): Theorem prover survey (Lean 4, Rocq, Isabelle, Dafny, F*), deep Lean 4 Q&A, "machine building assistant / human learning practitioner" identity, open hardware NICs, website migration to monorepo, repo rename cyborg→studio
+- [04-09-thu](04-09-thu/README.md): Racket language-oriented programming deep dive (readers, source-to-source compilation, Rosette→SMT), Python eDSL comparison, Z3Wire branding (logo + tagline + zensical.toml migration), studio repo skill path fixes
 
 ## Agent index
 
@@ -16,3 +18,10 @@ Zensical adoption and Z3Wire tooling migration, sail-xisa docs restructuring the
 - EBPF-LIMITATIONS: P4Runtime bridged via user-space agent. Ternary match needs TSS (~128 mask cap), range unsupported (must expand). 512B stack, fixed map sizes, spinlock restrictions (Tue)
 - RUST-MLIR: melior (most mature, TableGen+FFI), pliron (native Rust), circt-rs. Projects: Burn/CubeCL, LLZK, CIRCT integrations (Mon)
 - BPF-MLIR: no upstream BPF dialect in MLIR, P4MLIR proposal on Discourse, p4c backends (p4c-ebpf, p4c-dpdk, p4c-ubpf) (Mon)
+- THEOREM-PROVERS: Lean 4 (eDSL host, extensible parser, FBIP perf), Rocq (CompCert/seL4), Isabelle (Sledgehammer), Dafny (SMT-backed), F* (refinement types + Z3). User wants to learn Lean + Rocq. Lean deep dive: opaque/mutual/typeclasses for declarations, StateM + FBIP for state (Wed)
+- REPO-RENAME: cyborg→studio. studio/study pair from Latin studium. Website migrated to monorepo (Astro→studio/website/, CI deploy via Ed25519 key to gh-pages). Deferred: local dir rename, AGENTS.md identity update (Wed)
+- IDENTITY: "machine building assistant, human learning practitioner" — orchestrate agents for building, free cognitive load for learning (Wed)
+- OPEN-NICS: Corundum (Verilog, 10/25/100G, PTP), AMD OpenNIC (AXI4-Stream, DPDK drivers). FPGA-based, potential compilation targets (Wed)
+- RACKET-LOP: Reader→Syntax Objects→Expander→bytecode. `#lang` enables custom syntax. Compared to Python eDSL: syntactic freedom vs ecosystem integration. Python AST→IR→backend more pragmatic for most domains (Thu)
+- SOURCE-TO-SOURCE: Rosette (Racket→SMT-LIB/Z3), Pollen (→HTML), C++ boilerplate gen. No runtime overhead/lock-in (Thu)
+- Z3WIRE-BRANDING: `<W>` logo (Z/3/W encoded on 16x16 grid, adaptive SVG), tagline "Compile-time safe bit-vectors for Z3", mkdocs.yml→zensical.toml (Thu)
