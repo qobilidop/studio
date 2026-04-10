@@ -9,7 +9,7 @@ Sync journal summaries for the past 3 days (today, yesterday, day before yesterd
 ## Steps
 
 1. **Determine target days**: Using today's date, derive day directory paths for today, yesterday, and the day before yesterday:
-   - Format: `~/i/cyborg/journal/{year}/q{quarter}/w{week}/{MM-DD-dow}/`
+   - Format: `~/i/studio/journal/{year}/q{quarter}/w{week}/{MM-DD-dow}/`
    - Week number uses ISO 8601 (Monday-start weeks)
    - Day-of-week is lowercase 3-letter abbreviation (mon, tue, wed, thu, fri, sat, sun)
    - Note: the 3 days may span different weeks, quarters, or even years
@@ -42,7 +42,7 @@ Sync journal summaries for the past 3 days (today, yesterday, day before yesterd
 
 ## Rules
 
-- Follow the conventions in `~/i/cyborg/journal/AGENTS.md`.
+- Follow the conventions in `~/i/studio/journal/AGENTS.md`.
 - Do NOT modify session files.
 - Skip any day directory that doesn't exist (no error).
 - When the 3 days span different weeks/quarters/years, propagate up all affected chains.
