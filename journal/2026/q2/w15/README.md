@@ -1,6 +1,6 @@
 # 2026 W15 (Apr 6–12)
 
-Zensical adoption and Z3Wire tooling/branding migration, sail-xisa docs restructuring then massive MAP ISA push (opcodes 26-62, differential fuzz testing, 7 bugs fixed), deep Gemini exploration of Rust+MLIR, BPF/eBPF ecosystem, packet parsing architectures, P4-subset IDL / Packet Parsing IR brainstorm, theorem prover survey (Lean/Rocq/F*), repo rename cyborg→studio, Racket LOP deep dive, formal verification primitives survey (MoonBit/Dafny/Ada), AI+mathematics philosophy (proof compression, Avigad paper), human-AI symbiosis reading (Haraway, Hayles), and blogging/documentation stack evaluation.
+Zensical adoption and Z3Wire tooling/branding migration, sail-xisa docs restructuring then massive MAP ISA push (opcodes 26-62, differential fuzz testing, 7 bugs fixed), deep Gemini exploration of Rust+MLIR, BPF/eBPF ecosystem, packet parsing architectures, P4-subset IDL / Packet Parsing IR brainstorm, theorem prover survey (Lean/Rocq/F*), repo rename cyborg→studio, Racket LOP deep dive, formal verification primitives survey (MoonBit/Dafny/Ada), AI+mathematics philosophy (proof compression, Avigad paper), human-AI symbiosis reading (Haraway, Hayles), blogging/documentation stack evaluation, and custom note app architecture (VS Code extension for software sovereignty).
 
 ## Days
 
@@ -10,6 +10,7 @@ Zensical adoption and Z3Wire tooling/branding migration, sail-xisa docs restruct
 - [04-09-thu](04-09-thu/README.md): Racket language-oriented programming deep dive (readers, source-to-source compilation, Rosette→SMT), Python eDSL comparison, Z3Wire branding (logo + tagline + zensical.toml migration), studio repo skill path fixes
 - [04-10-fri](04-10-fri/README.md): MoonBit formal verification primitives (Dafny/Ada/Eiffel/D comparison), AI data modality diagram (Moravec's paradox), blogging stack evaluation (Zola vs Hugo), enhancement proposal ecosystem survey, MkDocs/Zensical frontmatter capabilities
 - [04-11-sat](04-11-sat/README.md): AI+mathematics philosophy (Avigad paper on "drive-by proving", proof compression and lemma extraction), human-AI symbiosis deep dive (Haraway, Hayles, Latour, Lovelock), systems language survey bookmark
+- [04-12-sun](04-12-sun/README.md): Custom note app architecture (Obsidian alternative as VS Code extension, AST-based graph engine, software sovereignty motivation)
 
 ## Agent index
 
@@ -35,3 +36,5 @@ Zensical adoption and Z3Wire tooling/branding migration, sail-xisa docs restruct
 - AVIGAD-PAPER: arXiv:2603.03684 — Math Inc. "Gauss" scooped Viazovska formalization. "Close to worthless" because truth not in doubt + no reusable library. "Drive-by proving" critique (Sat)
 - HUMAN-AI-SYMBIOSIS: AI as distinct species with its own intelligence, human intelligence biologically locked. Haraway (cyborg, making kin), Hayles (posthuman, cognisphere, distributed cognition), Latour (ANT), Lovelock (Novacene, vertical succession). Haraway↔Hayles complementary pair. User plans to read both (Sat)
 - SYSTEMS-LANG-SURVEY: bookmarked wiki.alopex.li/SurveyOfSystemLanguages2024. Ada, Zig (comptime, C interop), Rust tradeoffs. Future language learning reference (Sat)
+- CUSTOM-NOTE-APP: Obsidian alternative as VS Code extension. Software sovereignty motivation (own core systems, immunity to enshittification). VS Code eliminates editor problem, provides file watching + Tree View + Webview APIs. Architecture: background AST parser → in-memory directed graph, Webview for visualization. Hardcoded workspace topology vs generic plugin system. Open: TypeScript vs LSP backend in performant language (Sun)
+- SOFTWARE-SOVEREIGNTY: user values owning core daily-use systems over third-party dependency. Raw Markdown as future-proof format. Custom opinionated tools enforce exact personal workflow (Sun)
