@@ -1,11 +1,12 @@
 # 2026 Q2
 
-Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playground, then Cargo workspace refactor + proptest + diff testing + bug fixes). Z3Wire gains multiplication, gets a major docs/dev refactor, adds 6 design decision records, gate-level examples, and branding (`<W>` logo). P4Py tor.p4 translation completed. Personal website launched and migrated to monorepo. Repo renamed cyborg→studio. Deep exploration of agentic dev workflow standards, theorem provers (Lean/Rocq), Racket LOP, packet parsing IR design, formal verification primitives (MoonBit/Dafny/Ada), blogging stacks (Zola/Hugo), human-AI symbiosis philosophy (Haraway, Hayles), and custom note app architecture (VS Code extension, software sovereignty).
+Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playground, then Cargo workspace refactor + proptest + diff testing + bug fixes). Z3Wire gains multiplication, gets a major docs/dev refactor, adds 6 design decision records, gate-level examples, and branding (`<W>` logo). P4Py tor.p4 translation completed. Personal website launched and migrated to monorepo. Repo renamed cyborg→studio. Deep exploration of agentic dev workflow standards, theorem provers (Lean/Rocq), Racket LOP, packet parsing IR design, formal verification primitives (MoonBit/Dafny/Ada), blogging stacks (Zola/Hugo), human-AI symbiosis philosophy (Haraway, Hayles), custom note app architecture (VS Code extension, software sovereignty), and hardware formal specification (Sail, C++-to-RTL equivalence, ac_types, open-source HLS).
 
 ## Weeks
 
 - [W14](w14/README.md): SMT/Zig exploration, sail-xisa from bootstrap to full Parser ISA + MAP ISA + web playground + refactor + diff testing (116 Rust tests), Z3Wire (multiplication + docs/dev refactor + 6 design records + gate-level examples), P4Py tor.p4 complete (59 tests), personal website, agentic workflow design (repo doc standards, v0.1.0 protocol)
 - [W15](w15/README.md): Zensical adoption + Z3Wire tooling/branding migration, sail-xisa docs restructuring + MAP ISA push (opcodes 26-62, diff fuzz testing, 7 bugs fixed), packet parsing IR design, Rust+MLIR/BPF exploration, theorem prover survey (Lean/Rocq/F*), Racket LOP deep dive, repo rename cyborg→studio, website migration to monorepo, formal verification primitives (MoonBit/Dafny/Ada), blogging stack eval (Zola vs Hugo), AI+math philosophy (Avigad, proof compression), human-AI symbiosis reading (Haraway, Hayles), custom note app architecture (VS Code extension, software sovereignty)
+- [W16](w16/README.md): HW formal spec deep dive (Sail, FormalRTL, Jasper/HECTOR), C++-to-RTL equivalence checking (algorithmic subset C++, ac_types, bit-blasting), open-source HLS (Bambu, Dynamatic), Lean for HW, Webb's Theorem
 
 ## Agent index
 
@@ -30,3 +31,8 @@ Quarter opens with rapid sail-xisa progress (full Parser ISA, MAP ISA, web playg
 - HUMAN-AI-SYMBIOSIS: AI as distinct species, human intelligence biologically locked. Haraway (cyborg, making kin), Hayles (posthuman, cognisphere), Latour (ANT), Lovelock (Novacene). Haraway↔Hayles complementary (material vs informational). User plans to read both. Wife (historian) recommended Haraway (W15)
 - CUSTOM-NOTE-APP: Obsidian alternative as VS Code extension for software sovereignty. AST parser → directed graph, Webview visualization, hardcoded workspace topology. Open: TypeScript vs LSP backend (W15)
 - SOFTWARE-SOVEREIGNTY: user values owning core daily-use systems. Raw Markdown as future-proof format. Immunity to enshittification (W15)
+- HW-FORMAL-SPEC: correct-by-construction via eDSLs, deep SMT during construction, verified codegen. Sail = ISA gold standard. FormalRTL uses C/C++ ref models + hw-cbmc. Commercial: Jasper/HECTOR. C++-to-RTL equivalence via algorithmic subset C++ (ac_int types, bounded loops) → bit-blast → SAT/SMT (W16)
+- AC_TYPES-Z3WIRE: user considering ac_int for Z3Wire. Natural growth arithmetic at compile time (ac_int<4> + ac_int<5> → ac_int<6>). Ecosystem: NVIDIA MatchLib, Intel oneAPI FPGAs, CERN da4ml (W16)
+- LEAN-HW: Lean FRO HW verification mandate. Dependent types for bit-width, time-warping simulation (>100M cycles/sec). Community HDL "Sparkle" (W16)
+- HLS-OPEN-SOURCE: Bambu/PandA (C/C++ → Verilog/VHDL), Dynamatic (EPFL, MLIR-based, dynamically scheduled). Both take algorithmic subset C++ (W16)
+- WEBBS-THEOREM: functional completeness — Webb (N-valued logic), Sheffer (Boolean NAND/NOR), Sierpinski (infinite sets), Odrzywołek (continuous eml operator) (W16)
