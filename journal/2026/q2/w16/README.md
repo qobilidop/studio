@@ -1,11 +1,13 @@
 # 2026 W16 (Apr 13–19)
 
-Hardware formal specification deep dive and broad technical exploration — HW formal spec survey (Sail, C++-to-RTL equivalence, ac_types, open-source HLS), Webb's Theorem, then C preprocessor alternatives, symbolic execution naming, comptime survey, type theory (division by zero), and ISA instruction fuzzer methodology.
+Hardware formal specification deep dive, broad technical exploration (C preprocessor alternatives, comptime, symbolic execution, type theory, ISA fuzzers), Rust HDL survey and RHDL compiler pipeline, P4-to-WASM compilation analysis, symbolic execution with Lean, and practical symbolic executor design. Light social day mid-week.
 
 ## Days
 
 - [04-13-mon](04-13-mon/README.md): HW formal spec survey (Sail, FormalRTL, Jasper/HECTOR), C++-to-RTL equivalence (algorithmic subset C++, bit-blasting, SAT/SMT), ac_types ecosystem (MatchLib, Intel oneAPI, CERN da4ml), open-source HLS (Bambu, Dynamatic), Lean for HW (eDSLs, time-warping simulation), Webb's Theorem
-- [04-14-tue](04-14-tue/README.md): C preprocessor alternatives (modules, generics, comptime, hygienic macros), symbolic execution naming (PathGroup/PathSet), protobuf set patterns, comptime survey (D/C++/Jai/Rust/Circle), division by zero in type theory (Buzzard FAQ), ISA instruction fuzzer methodology (coverage-guided, differential testing)
+- [04-14-tue](04-14-tue/README.md): C preprocessor alternatives (modules, generics, comptime, hygienic macros), symbolic execution naming (PathGroup/PathSet), protobuf set patterns, comptime survey (D/C++/Jai/Rust/Circle), division by zero in type theory (Buzzard FAQ), ISA instruction fuzzer methodology (coverage-guided, differential testing), TestRIG deep dive, state-of-art ISA fuzzing survey (HyPFuzz, Revizor, MorFuzz)
+- [04-15-wed](04-15-wed/README.md): Light day — met old friend at office dinner, good day-job progress (NDA), no open-source work. Fun US-China city parallels discussion
+- [04-16-thu](04-16-thu/README.md): Rust HDL survey (RustHDL, RHDL, Kaze, Spade, Veryl, Calyx, LLHD), RHDL compiler pipeline (syn→RHIF SSA IR→RTL→Verilog), P4-to-WASM compilation challenges (5 semantic gaps), symbolic execution with Lean (tactics, verified engine, certifying SMT output), practical symbolic executor design (flat path list, copy-and-continue, CoW)
 
 ## Agent index
 
@@ -15,6 +17,11 @@ Hardware formal specification deep dive and broad technical exploration — HW f
 - LEAN-HW: Lean FRO mandate includes HW verification. Dependent types for bit-width, SMT tactics, time-warping simulation (>100M cycles/sec). Community HDL "Sparkle" (Mon)
 - WEBBS-THEOREM: functional completeness — single binary operator generates all operations. Webb (N-valued), Sheffer (Boolean NAND/NOR), Sierpinski (infinite sets), Odrzywołek (continuous eml operator) (Mon)
 - COMPTIME-LANDSCAPE: D pioneered CTFE (2007), C++ constexpr→consteval, Zig flagship, Jai #run, Rust const fn (restricted), Circle @meta. Implementation requires compiler-as-VM, cross-compilation awareness, memory management. Approaches dependent type theory (Tue)
-- ISA-FUZZERS: grammar-aware generation + coverage-guided feedback (toggle/FSM/CSR metrics) + differential testing (golden model vs DUT). Tools: DifuzzRTL, Cascade (ETH Zurich, CVEs), RFuzz, ProcessorFuzz, PreSiFuzz (Intel). Applicable to XISA simulator (Tue)
+- ISA-FUZZERS: grammar-aware generation + coverage-guided feedback (toggle/FSM/CSR metrics) + differential testing (golden model vs DUT). Tools: DifuzzRTL, Cascade (ETH Zurich, CVEs), RFuzz, ProcessorFuzz, PreSiFuzz (Intel). TestRIG (REMS, QuickCheck-based, RVFI-DII, NOT coverage-guided). State of art: HyPFuzz (hybrid formal+fuzz), Revizor (Microsoft, real silicon HPCs), MorFuzz, LLM-assisted (emerging). Trend: hybrid formal+fuzz with security-oriented oracles. Applicable to XISA simulator (Tue)
 - SYMBOLIC-EXECUTION: PathGroup (active management), PathSet (formal output), ExecutionFrontier (search edges). angr SimulationManager, KLEE Executor/Searcher. Individual paths: ExecutionState/SimState/SymbolicState (Tue)
 - TYPE-THEORY-TOTALITY: division by zero in Lean/Rocq — total functions require 1/0=0. Burden shifts from syntax to theorem application. CS pragmatism vs mathematical purity tension (Tue)
+- RUST-HDL: RustHDL (mature transpiler), RHDL (next-gen, RHIF SSA IR, 10-100x faster sim), Kaze (lightweight graph), Spade (standalone Rust-inspired), Veryl (Cargo-like tooling, Cranelift sim). Infrastructure: Calyx (HW accelerator IL), LLHD (merged into CIRCT). Also: Clap (ZK circuits), Comet-rs (tensor algebra→MLIR), HIRL (experimental restrictive RTL) (Thu)
+- RHDL-COMPILER: syn crate → typed AST → expression transform (if/match→MUX) → RHIF (SSA, strongly typed) → RTL → Verilog. quote crate generates runtime HW graph builders, not direct execution (Thu)
+- P4-TO-WASM: five semantic gaps — match-action tables (no native assoc arrays), FSM→structured control flow (trampoline), arbitrary bit-widths (bitmask+shift), externs→imports (clean), translation validation needed (Thu)
+- LEAN-SYMEX: three approaches — custom tactics, verified engine (Leanette), certify external SMT output. Galois SAW precedent (Thu)
+- SYMEX-DESIGN: flat path list output (KLEE model), embarrassingly parallel SMT. Copy-and-continue forking (simple, pure isolation), CoW optimization path. User building own symbolic executor (Thu)
