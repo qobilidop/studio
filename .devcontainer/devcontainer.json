@@ -1,4 +1,6 @@
 {
-  "name": "cyborg",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu"
+  "name": "studio",
+  "build": {
+    "dockerfile": "Dockerfile"
+  }
 }
