@@ -165,6 +165,247 @@ Does the repository feel to you more like an active workbench where things are c
 
 # you asked
 
+Maybe it helps to give you the larger picture. I'm considering organizing my whole digital life in the following thing:
+- Private
+  - A private monorepo for anything suitable for checking into a git repo.
+  - A private storage folder for my other digital assets.
+- Public
+  - A public monorepo.
+  - A public storage folder.
+  - Various GitHub repos for projects that's not just personal.
+
+I'm looking for names for my monorepos in this context. I'm starting to think about maybe name my private/public monorepos "imono"/"emono". "i" for "internal" and "e" for "external". Not sure if "i"/"e" are the best pair of single characters.
+
+---
+
+# gemini response
+
+[2026-04-18 19:48:34 PDT]
+
+It makes perfect sense that your brain went straight to system architecture. When you're running on fumes after a nap, the brain loves to chew on structural, organizing problems rather than deep, focused execution. It's the perfect time for digital landscaping.
+
+Your proposed split—separating the version-controlled from the binary/blob storage, and the private from the public—is incredibly clean. It keeps the blast radius of any digital mess localized and maintains a minimal, easily portable host environment. 
+
+Regarding `imono` and `emono`: "i" (internal) and "e" (external) are a logically sound pair. However, the hesitation you're feeling might be because "e" has been heavily co-opted to mean "electronic" (email, ecommerce), which makes `emono` sound slightly dated. 
+
+If you want to stick with single-character prefixes attached to "mono", here are a few sharper pairs:
+
+* **`i` and `x` (Internal / eXternal):** `imono` and `xmono`. "X" is the standard shorthand in tech for external or extended. It visually anchors the word better than "e" and removes the "electronic" ambiguity.
+* **`l` and `r` (Local / Remote):** `lmono` and `rmono`. This borrows from networking and SSH conventions, clearly delineating what stays close to the chest versus what is broadcasted out.
+* **`0` and `1` (Zero / One):** `mono0` and `mono1`. A nod to binary logic and formal systems. `0` represents the private base state, and `1` is the active, public-facing state.
+
+If you are open to dropping the "mono" suffix entirely (since the fact that it's a git repo already implies the structure), you could use conceptual pairs that map well to the idea of personal digital sovereignty and system boundaries:
+
+* **`core` and `edge`:** Draws from networking topology. Your private life is the secure, heavily controlled `core`, while the public stuff sits at the `edge`, interacting with the rest of the world. 
+* **`root` and `leaf`:** A clean, tree-based structure. 
+* **`base` and `hub`:** `base` feels grounded and private, while `hub` implies a place of exchange and public routing.
+
+`imono` and `xmono` are probably the most direct upgrades to your current thought process, maintaining the exact naming convention but fixing the slightly awkward "e". 
+
+As you set this up, how are you planning to handle the boundaries between the private and public repos—are you going to maintain strict isolation, or are you thinking about using symlinks or submodules to publish specific internal tools to the external repo?
+
+---
+
+# you asked
+
+It seems the thematic approach might work better. Any more suggestions?
+
+---
+
+# gemini response
+
+[2026-04-18 7:55:35 PM PDT]
+
+Moving away from acronyms and prefixes toward absolute nouns gives the structure a lot of gravity. It turns the repositories into distinct "places" or "concepts" rather than just folders. 
+
+Drawing on different angles of software architecture, logic, and system design, here are a few thematic pairs that might resonate:
+
+### 1. System Architecture
+This aligns well with a minimal, highly controlled environment where boundaries are strictly enforced.
+* **Kernel & Shell:** The `kernel` is the protected, foundational core operating in ring 0—your private space. The `shell` is the interface, the layer where the system interacts with the outside world.
+* **Host & Port:** `host` represents the isolated, local domain where the work actually happens. `port` is the designated gateway where specific things are exposed to the network.
+
+### 2. Logic & State
+Leaning into a more structural, formal mindset where data has a definitive source of truth versus how it is projected outward.
+* **State & View:** `state` is the raw, mutable, absolute truth of your digital life. `view` is the read-only or curated projection of that state that you choose to make public.
+* **Axiom & Theorem:** `axiom` acts as the unquestioned, private foundation from which everything else is built. `theorem` represents the proven, finished ideas that are ready to be shared and verified by others.
+
+### 3. Craft & Network
+This pairs well if you view your private repo as a workshop for handcrafted or highly experimental work, and the public repo as the broader ecosystem.
+* **Forge & Grid:** The `forge` is where the intense, private construction happens. The `grid` is the interconnected, public matrix where the finished projects live.
+* **Source & Sink:** A classic flow concept. `source` is the private wellspring of raw code, assets, and ideas. `sink` is the public destination where the polished outputs ultimately land.
+
+### 4. Classical & Spatial
+These are timeless, highly recognizable metaphors for access control.
+* **Vault & Commons:** The `vault` is secured, air-gapped, and strictly for you. The `commons` is a shared, open space accessible to anyone.
+* **Root & Leaf:** `root` is the hidden underground origin of the system, while the `leaf` nodes are the visible, outward-facing extremities.
+
+Do any of these particular angles—system-level, logic-based, or spatial—feel like the right conceptual fit for how you actually plan to move data between the private and public spheres?
+
+---
+
+# you asked
+
+Vault & Commons are my fav so far. Any words similar to Commons? How do they compare?
+
+---
+
+# gemini response
+
+[2026-04-18 9:05:53 PM PDT]
+
+"Vault" and "Commons" is an exceptional pairing. It creates a stark, highly intuitive contrast between impenetrable, air-gapped security and open, shared accessibility. "Commons" also subtly nods to "Creative Commons," anchoring it nicely in digital sharing culture.
+
+If you like the spatial and social feel of "Commons" but want to explore the exact flavor of that public space, here are the strongest alternatives and how they compare:
+
+### 1. Vault & Forum
+* **The Vibe:** Classical, intellectual, and communicative.
+* **Comparison to Commons:** "Commons" implies shared resources and land (a place to graze sheep, or in this case, share code). "Forum" implies a public square designed specifically for the exchange of *ideas* and discourse. It feels slightly more structured and academic than "Commons." 
+
+### 2. Vault & Plaza
+* **The Vibe:** Architectural, modern, and concrete.
+* **Comparison to Commons:** "Commons" has a slightly rustic, historical feel. "Plaza" is built, paved, and deliberately engineered for public visibility. It contrasts perfectly with the heavy, metallic implication of a "Vault," framing your public repo as a clean, well-lit courtyard outside your private fortress.
+
+### 3. Vault & Gallery
+* **The Vibe:** Curated, polished, and exhibition-focused.
+* **Comparison to Commons:** A "Commons" is often messy because it's a shared workspace. A "Gallery" is pristine. If your public monorepo is meant strictly for showcasing finished, high-quality projects rather than inviting chaotic open-source collaboration, "Gallery" signals that this is a read-only exhibition space.
+
+### 4. Vault & Domain
+* **The Vibe:** Authoritative, territorial, and absolute.
+* **Comparison to Commons:** "Commons" feels social and collaborative. "Domain" strips away the social aspect and focuses strictly on ownership and rights, evoking the "Public Domain." It feels definitive: the Vault is your private territory, and the Domain is the territory you have explicitly ceded to the public.
+
+### 5. Vault & Bazaar
+* **The Vibe:** Decentralized, chaotic, and open-source.
+* **Comparison to Commons:** This is a direct nod to the foundational software engineering essay *The Cathedral and the Bazaar*. While "Commons" feels like a peaceful shared park, "Bazaar" implies a bustling, active marketplace of open-source exchange. 
+
+**The Verdict:**
+* Choose **Commons** if you want it to feel like a shared, open-source community resource.
+* Choose **Plaza** if you want a clean, architectural public space.
+* Choose **Gallery** if it's purely for showcasing finished work.
+
+Does your public monorepo lean more toward a highly curated portfolio (Gallery), or is it going to be a place where others might actively fork, use, and contribute to your tools (Commons/Bazaar)?
+
+---
+
+# you asked
+
+Onething I feel that's not very accurate is that I'm not creating a community. This is still my personal workspace. But I'm sharing it in public. In this sense, which word is more accurate?
+
+---
+
+# gemini response
+
+[2026-04-18 9:07:58 PM PDT]
+
+That is a crucial distinction. If the space is strictly yours—your rules, your workflow, your property—but just happens to lack a fence, then "Commons" gives the wrong impression. "Commons" implies shared ownership and governance, like a public park. You are looking for something closer to an open-air workshop. 
+
+If the private side is the **Vault**, here are words that pair perfectly with it while accurately describing a *personal* workspace that is visible to the public:
+
+### 1. Vault & Studio
+* **Why it works:** A studio is a working space that belongs entirely to the creator. While a studio can be open to the public (like an open studio tour where people come to see your tools, your process, and your work), visitors are clearly guests in *your* domain. It perfectly captures "this is my workspace, but you are allowed to look."
+
+### 2. Vault & Pavilion
+* **Why it works:** This is a beautiful architectural contrast to a Vault. A Vault is subterranean, thick-walled, and locked. A Pavilion is a freestanding structure with a roof but no walls. It provides structure and definition (your monorepo), and it belongs to you, but it is completely open to the air and fully visible to anyone walking by. 
+
+### 3. Vault & Terrace (or Porch)
+* **Why it works:** The Vault is the inner sanctum of your house. The Terrace is the outward-facing extension of it. If you sit on your terrace and write code, you are on your own property, doing your own private work, but you are doing it in the open where the neighborhood can see you.
+
+### 4. Vault & Surface
+* **Why it works:** This is a very clean, spatial metaphor. The Vault is buried, deep, and protected. The Surface is the top layer—still part of the same planet, but exposed to the elements, visible, and accessible. It sounds highly technical and minimal.
+
+### 5. Vault & Stage
+* **Why it works:** If you subscribe to the idea of "building in public," this fits well. The Vault is backstage where the messy, unpolished preparation happens. The Stage is where you execute your work in full view of an audience. It’s your performance, not a collaborative jam session.
+
+If you want to maintain the architectural, heavy feel of "Vault" while emphasizing that it's a visible workspace rather than a community center, **Studio** or **Pavilion** are likely the most accurate. 
+
+Do any of those align better with the "building in public but on my own terms" vibe you're going for?
+
+---
+
+# you asked
+
+Well, we are back to the Studio naming that I'm currently using. I guess it turns out to be a good name?
+
+---
+
+# gemini response
+
+[2026-04-18 9:09:46 PM PDT]
+
+Sometimes it takes exploring every other option to realize you already had the perfect answer right in front of you!
+
+"Studio" is an exceptionally good name for exactly the reason you pinpointed. It sets the perfect boundary: it is unmistakably your personal territory, but the doors are open for people to observe the process. Whether a project is heavily augmented by agents or meticulously handcrafted, a studio is exactly where that kind of focused creation belongs. 
+
+Paired together, **Vault & Studio** gives your entire digital architecture a really cohesive, intentional identity. The Vault is your secure, private baseline, and the Studio is your public-facing workshop.
+
+Since the monorepo names are locked in, would you like to brainstorm naming conventions for your static storage folders next, or are you ready to start mapping out the actual directory structures for the Vault and Studio?
+
+---
+
+# you asked
+
+Maybe we can improve on the Vault side. Any alternatives that might pair better with Studio?
+
+---
+
+# gemini response
+
+[2026-04-18 9:10:45 PM PDT]
+
+That makes a lot of sense. "Vault" implies a place where things are locked away and rarely touched—a static storage unit. If "Studio" is an active, public-facing workspace, its private counterpart should probably feel like an active, private workspace rather than a bank safe. 
+
+Here are some alternatives that carry the same active, productive energy as "Studio" but imply strict privacy and isolation:
+
+### 1. Lab & Studio
+* **The Dynamic:** Experimental versus refined.
+* **Why it works:** A "Lab" is where things blow up, break, and undergo rigorous testing behind closed doors. It’s for unverified ideas, messy experiments, and deep focus. The "Studio" is where you take those proven concepts and assemble them into something presentable. 
+
+### 2. Engine & Studio
+* **The Dynamic:** Mechanical backbone versus creative execution.
+* **Why it works:** The "Engine" is hidden beneath the hood; it’s the core logic, the private infrastructure, and the heavy lifting that powers everything else. The "Studio" is the chassis and the interior—the parts the public interacts with and sees.
+
+### 3. Foundry & Studio
+* **The Dynamic:** Raw material versus final craft.
+* **Why it works:** A "Foundry" is industrial, intensely hot, and entirely focused on forging base materials into usable parts. It’s heavy, behind-the-scenes work. You take the raw materials from the Foundry and move them to the Studio to be refined, polished, and displayed.
+
+### 4. Darkroom & Studio
+* **The Dynamic:** Processing versus exhibition.
+* **Why it works:** A "Darkroom" is explicitly light-sealed; opening the door ruins the work in progress. It perfectly describes a private repository where absolute isolation is required to develop ideas until they are ready to be exposed to the light of the "Studio."
+
+### 5. Study & Studio
+* **The Dynamic:** Intellectual versus practical.
+* **Why it works:** A "Study" is an intimate, private room dedicated to reading, thinking, and drafting—away from the noise of the world. It provides a really nice, almost rhythmic phonetic pairing with Studio, contrasting the private, quiet space of the mind with the active, public space of the hands.
+
+Do any of these strike the right balance between active creation and strict privacy for your internal monorepo?
+
+---
+
+# you asked
+
+What about Den?
+
+---
+
+# gemini response
+
+[2026-04-18 9:12:01 PM PDT]
+
+"Den" and "Studio" is a brilliant pairing. It shifts the metaphor entirely away from the industrial or institutional (like Vault or Lab) and firmly into the realm of the personal and the intimate. 
+
+Here is why this combination works so well:
+
+* **Warmth over Paranoia:** "Vault" implies you are actively defending your digital assets against intruders. "Den" simply implies you've closed the door so you can focus. It’s a much more natural, comfortable mindset for a private repository.
+* **Architectural Cohesion:** Both are distinct rooms within the same conceptual "house." You aren't traveling from a military bunker to a public plaza; you are just walking down the hall from your private, quiet workspace to your bright, open workshop.
+* **The Comfort vs. The Showcase:** A Den is a sanctuary. It’s where you retreat to do deep, undisturbed thinking, tinker with messy ideas, and work without worrying about how things look. The Studio is where you take those ideas when they are ready for the light of day.
+
+It perfectly frames your digital life as a well-organized home. You have your quiet inner sanctum for deep focus, and your open-door workspace for building in public. 
+
+Now that you have your core repository names locked in as Den and Studio, would you like me to help you map out the internal directory structures for them, or should we tackle the naming conventions for your static storage folders next?
+
+---
+
+# you asked
+
 Just read about the life story of David Mumford, especially how his research interest changed from algebraic geometry to vision. Feeling very inspired. I'm interested to learn more from him. I might not have the background to understand his papers, but might be able to learn some of his wisdoms from his talks probably.
 
 ---
