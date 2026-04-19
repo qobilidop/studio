@@ -1,6 +1,6 @@
 # 2026 W16 (Apr 13–19)
 
-Hardware formal specification deep dive, broad technical exploration (C preprocessor alternatives, comptime, symbolic execution, type theory, ISA fuzzers), Rust HDL survey and RHDL compiler pipeline, P4-to-WASM compilation analysis, symbolic execution with Lean, and practical symbolic executor design. Light social day mid-week.
+Hardware formal specification deep dive, broad technical exploration (C preprocessor alternatives, comptime, symbolic execution, type theory, ISA fuzzers), Rust HDL survey and RHDL compiler pipeline, P4-to-WASM compilation analysis, symbolic execution with Lean, practical symbolic executor design. Extensive monorepo naming exploration (concluded with Den & Studio for private/public repos), full digital life architecture design, monorepo structure redesign+migration. David Mumford inspiration. Rest day Friday, light social day mid-week.
 
 ## Days
 
@@ -8,6 +8,8 @@ Hardware formal specification deep dive, broad technical exploration (C preproce
 - [04-14-tue](04-14-tue/README.md): C preprocessor alternatives (modules, generics, comptime, hygienic macros), symbolic execution naming (PathGroup/PathSet), protobuf set patterns, comptime survey (D/C++/Jai/Rust/Circle), division by zero in type theory (Buzzard FAQ), ISA instruction fuzzer methodology (coverage-guided, differential testing), TestRIG deep dive, state-of-art ISA fuzzing survey (HyPFuzz, Revizor, MorFuzz)
 - [04-15-wed](04-15-wed/README.md): Light day — met old friend at office dinner, good day-job progress (NDA), no open-source work. Fun US-China city parallels discussion
 - [04-16-thu](04-16-thu/README.md): Rust HDL survey (RustHDL, RHDL, Kaze, Spade, Veryl, Calyx, LLHD), RHDL compiler pipeline (syn→RHIF SSA IR→RTL→Verilog), P4-to-WASM compilation challenges (5 semantic gaps), symbolic execution with Lean (tactics, verified engine, certifying SMT output), practical symbolic executor design (flat path list, copy-and-continue, CoW)
+- [04-17-fri](04-17-fri/README.md): Rest day — exhausted from the week, evening nap, no substantive work
+- [04-18-sat](04-18-sat/README.md): Extensive monorepo naming (second-brain→digital life architecture→Den & Studio), full monorepo structure redesign+migration (waiki, workshop, toolbox, library, inbox.md), David Mumford inspiration (algebraic geometry→vision)
 
 ## Agent index
 
@@ -25,3 +27,7 @@ Hardware formal specification deep dive, broad technical exploration (C preproce
 - P4-TO-WASM: five semantic gaps — match-action tables (no native assoc arrays), FSM→structured control flow (trampoline), arbitrary bit-widths (bitmask+shift), externs→imports (clean), translation validation needed (Thu)
 - LEAN-SYMEX: three approaches — custom tactics, verified engine (Leanette), certify external SMT output. Galois SAW precedent (Thu)
 - SYMEX-DESIGN: flat path list output (KLEE model), embarrassingly parallel SMT. Copy-and-continue forking (simple, pure isolation), CoW optimization path. User building own symbolic executor (Thu)
+- DIGITAL-LIFE-ARCH: private (Den monorepo + storage) + public (Studio monorepo + storage + standalone repos). Naming journey: second-brain words → prefix pairs (imono/xmono) → thematic pairs (Vault/Commons, Kernel/Shell) → Vault & Studio → Den & Studio. Den = warm private sanctuary vs Vault's paranoid feel (Sat)
+- MONOREPO-NAMING: Studio confirmed as right name for public monorepo — personal workspace visible to public, not community resource. Full circle after exhaustive exploration of alternatives (Codex, Commonplace, Corpus, Folio, Base, etc.). Key distinction: workspace vs archive, and "my space, doors open" (Sat)
+- MONOREPO-STRUCTURE: full redesign — journal/, library/ (store gitignored), waiki/ (AI-owned wiki), workshop/ (dated small projects), toolbox/ (skills source of truth + deploy script), website/, inbox.md. Ownership formalized. Devcontainer→plain ubuntu:24.04. Temp files→.agent_scratch/ convention (Sat)
+- DAVID-MUMFORD: Fields Medal algebraic geometry → computer vision pivot. Resources: blog (AI+consciousness), "Indra's Pearls" (accessible), Pattern Theory (1994), Indian math history lectures. Mumford-Shah functional bridges pure math + practical vision (Sat)
