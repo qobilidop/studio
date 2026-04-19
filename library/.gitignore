@@ -1,0 +1,4 @@
+# Raw source files are stored locally and synced to cloud storage.
+# Only the store/ directory is ignored — index/ is tracked.
+store/*
+!store/.gitkeep
