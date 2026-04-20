@@ -1,6 +1,6 @@
 # 2026 W16 (Apr 13–19)
 
-Hardware formal specification deep dive, broad technical exploration (C preprocessor alternatives, comptime, symbolic execution, type theory, ISA fuzzers), Rust HDL survey and RHDL compiler pipeline, P4-to-WASM compilation analysis, symbolic execution with Lean, practical symbolic executor design. Extensive monorepo naming exploration (concluded with Den & Studio for private/public repos), full digital life architecture design, monorepo structure redesign+migration. David Mumford inspiration. Rest day Friday, light social day mid-week.
+Hardware formal specification deep dive, broad technical exploration (C preprocessor alternatives, comptime, symbolic execution, type theory, ISA fuzzers), Rust HDL survey and RHDL compiler pipeline, P4-to-WASM compilation analysis, symbolic execution with Lean, practical symbolic executor design. Extensive monorepo naming exploration (concluded with Den & Studio for private/public repos), full digital life architecture design, monorepo structure redesign+migration. David Mumford inspiration. Z3Wire tagline update and ac_int comparison research. Rest day Friday, low-energy weekend.
 
 ## Days
 
@@ -10,6 +10,7 @@ Hardware formal specification deep dive, broad technical exploration (C preproce
 - [04-16-thu](04-16-thu/README.md): Rust HDL survey (RustHDL, RHDL, Kaze, Spade, Veryl, Calyx, LLHD), RHDL compiler pipeline (syn→RHIF SSA IR→RTL→Verilog), P4-to-WASM compilation challenges (5 semantic gaps), symbolic execution with Lean (tactics, verified engine, certifying SMT output), practical symbolic executor design (flat path list, copy-and-continue, CoW)
 - [04-17-fri](04-17-fri/README.md): Rest day — exhausted from the week, evening nap, no substantive work
 - [04-18-sat](04-18-sat/README.md): Extensive monorepo naming (second-brain→digital life architecture→Den & Studio), full monorepo structure redesign+migration (waiki, workshop, toolbox, library, inbox.md), David Mumford inspiration (algebraic geometry→vision)
+- [04-19-sun](04-19-sun/README.md): Low-energy day. Z3Wire tagline update ("Compile-time type-safe bit-vectors for Z3") and ac_int operator semantic comparison research. Bernard Lowe character comparison from Gemini
 
 ## Agent index
 
@@ -31,3 +32,5 @@ Hardware formal specification deep dive, broad technical exploration (C preproce
 - MONOREPO-NAMING: Studio confirmed as right name for public monorepo — personal workspace visible to public, not community resource. Full circle after exhaustive exploration of alternatives (Codex, Commonplace, Corpus, Folio, Base, etc.). Key distinction: workspace vs archive, and "my space, doors open" (Sat)
 - MONOREPO-STRUCTURE: full redesign — journal/, library/ (store gitignored), waiki/ (AI-owned wiki), workshop/ (dated small projects), toolbox/ (skills source of truth + deploy script), website/, inbox.md. Ownership formalized. Devcontainer→plain ubuntu:24.04. Temp files→.agent_scratch/ convention (Sat)
 - DAVID-MUMFORD: Fields Medal algebraic geometry → computer vision pivot. Resources: blog (AI+consciousness), "Indra's Pearls" (accessible), Pattern Theory (1994), Indian math history lectures. Mumford-Shah functional bridges pure math + practical vision (Sat)
+- Z3WIRE-AC_INT: operator semantics compared — agree on add/sub/mul width growth, comparison, right shift; differ on left shift (truncate vs widen), bitwise NOT (grow vs preserve), bitwise ops (auto-promote vs exact match). ac_int ships zero tests; cross-testing would be novel. Tagline updated to "Compile-time type-safe bit-vectors for Z3" (Sun)
+- REST-PATTERN: two consecutive low-energy days (Fri-Sun). Deep technical week Mon-Thu drained cognitive battery (Fri, Sun)
